@@ -1,0 +1,114 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationStyle":"custom"/* 隐藏导航栏 */
+			}
+		}
+	    ,{
+            "path" : "pages/shouye/shouye",
+            "style" : {"navigationBarTitleText": "首页",/* 导航栏上的字 */
+			"navigationBarTextStyle":"white",/* 导航栏标题颜色 */
+			"navigationBarBackgroundColor":"#896744"/* 导航栏的背景颜色 */}
+        }
+        ,{
+            "path" : "pages/youxi/youxi",
+            "style" : {"navigationBarTitleText": "游戏",
+			"navigationBarTextStyle":"white",
+			"navigationBarBackgroundColor":"#896744"}
+        }
+        ,{
+            "path" : "pages/shangcheng/shangcheng",
+            "style" : {"navigationBarTitleText": "商城",
+			"navigationBarTextStyle":"white",
+			"navigationBarBackgroundColor":"#896744"}
+        }
+        ,{
+            "path" : "pages/wode/wode",
+            "style" : {"navigationBarTitleText": "我的",
+			"navigationBarTextStyle":"white",
+					"navigationBarBackgroundColor":"#896744"
+			}
+        }
+        ,{
+            "path" : "pages/duanxindenglu/duanxindenglu",
+            "style" : {"navigationBarTitleText": "短信登录",
+			"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"
+            }
+        }
+        ,{
+            "path" : "pages/zhuce/zhuce",
+            "style" : {"navigationBarTitleText": "用户注册",
+						"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"
+					}
+        }
+        ,{
+            "path" : "pages/zhaohuimima/zhaohuimima",
+            "style" : {"navigationBarTitleText": "找回密码",
+			"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"}
+        }
+        ,{
+            "path" : "pages/choujiangjilu/choujiangjilu",
+            "style" : {"navigationBarTitleText": "抽奖记录",
+			"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"}
+        }
+        ,{
+            "path" : "pages/xiugaishoujihao/xiugaishoujihao",
+            "style" : {"navigationBarTitleText": "修改手机号",
+			"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"}
+        }
+        ,{
+            "path" : "pages/xiugaishoujihao2/xiugaishoujihao2",
+            "style" : {"navigationBarTitleText": "修改手机号",
+			"navigationBarTextStyle":"white",
+            		"navigationBarBackgroundColor":"#896744"
+					
+					}
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "uni-app",
+		"navigationBarBackgroundColor": "#F8F8F8",
+		"backgroundColor": "#F8F8F8"
+	},
+	"tabBar":{
+		"color":"#a2a2a2",/* 字体颜色 */
+		"selectedColor":"#896744",/* 选中时候字体的颜色 */
+		"borderStyle":"black",/* 导航栏边框的颜色 */
+		"backgroundColor":"#FFFFFF",/* 导航栏背景的颜色 */
+		/* 导航栏数组 */
+		"list":[
+			{
+				"pagePath":"pages/shouye/shouye",/* 页面的路径 */
+				"text":"首页",/* 名称 */
+				"iconPath":"static/daohanglan/icon_sy_n.png",/* 图标 */
+				"selectedIconPath":"static/daohanglan/icon_sy_y.png"/* 选中时的图标 */
+			},
+			{
+				"pagePath":"pages/youxi/youxi",/* 页面的路径 */
+				"text":"游戏",/* 名称 */
+				"iconPath":"static/daohanglan/icon_yx_n.png",/* 图标 */
+				"selectedIconPath":"static/daohanglan/icon_yx_y.png"/* 选中时的图标 */
+			},
+			{
+				"pagePath":"pages/shangcheng/shangcheng",/* 页面的路径 */
+				"text":"商城",/* 名称 */
+				"iconPath":"static/daohanglan/icon_sc_n.png",/* 图标 */
+				"selectedIconPath":"static/daohanglan/icon_sc_y.png"/* 选中时的图标 */
+			},
+			{
+				"pagePath":"pages/wode/wode",/* 页面的路径 */
+				"text":"我的",/* 名称 */
+				"iconPath":"static/daohanglan/icon_wd_n.png",/* 图标 */
+				"selectedIconPath":"static/daohanglan/icon_wd_y.png"/* 选中时的图标 */
+			}
+		]
+	}
+}
