@@ -1,0 +1,15 @@
+{
+  "navigationBarTitleText": "选择收货地址",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#896744",
+  "titleNView": {
+    "buttons": [
+      {
+        "text": "",
+        "fontSrc": "/static/iconfont.ttf",
+        "fontSize": "25px"
+      }
+    ]
+  },
+  "usingComponents": {}
+}

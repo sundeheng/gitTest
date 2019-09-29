@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"content { width: ",[0,750],"; height: ",[0,1334],"; background-color: #e5e5e5; }\n.",[1],"ceng1{ margin-left: ",[0,30],"; margin-right: ",[0,30],"; }\n.",[1],"ceng2 { margin-top: ",[0,20],"; height: ",[0,116],"; background-color: #FFFFFF; border-radius: ",[0,10],"; }\n",],undefined,{path:"./pages/choujiangjilu/choujiangjilu.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/choujiangjilu/choujiangjilu.wxml') } }));

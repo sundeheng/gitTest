@@ -1,0 +1,130 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*  */
+.content {
+	width: 750rpx;
+	height: 1334rpx;
+	background-size: 100% 100%;
+}
+.logo {
+	width: 136rpx;
+	height: 136rpx;
+	margin-top: 133rpx;
+	margin-left: 316rpx;
+}
+.ceng1 {
+	width: 574rpx;
+	height: 500rpx;
+	margin-top: 145rpx;
+	margin-left: 88rpx;
+	position: relative;
+}
+.ceng2 {
+	height: 80rpx;
+	background-color: #515151;
+	border-radius: 10rpx;
+}
+.text {
+	margin: 15rpx 10rpx;
+	text-align: center;
+	color: #ffffff;
+	font-size: 26rpx;
+}
+.text1 {
+	text-align: left;
+	color: #ffffff;
+	font-size: 26rpx;
+}
+.inp {
+	color: #ffffff;
+	font-size: 26rpx;
+}
+.bt {
+	border-radius: 10rpx;
+	height: 80rpx;
+	font-size: 32rpx;
+}
+

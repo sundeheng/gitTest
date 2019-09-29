@@ -1,0 +1,38 @@
+
+.content {
+		width: 750rpx;
+		height: 1334rpx;
+		background-color: #e5e5e5;
+}
+.ceng2 {
+	margin-top: 20rpx;
+	height: 80rpx;
+	background-color: #FFFFFF;
+	border-radius: 10rpx;
+}
+.text {
+	margin: 15rpx 10rpx;
+	text-align: center;
+	color: #e5e5e5;
+	font-size: 26rpx;
+}
+.inp {
+	background-color: #FFFFFF;
+	color: #e5e5e5;
+	font-size: 26rpx;
+}
+.bt{
+	color: #896744;
+	font-size: 25rpx; 
+	margin:10rpx 10rpx 10rpx 10rpx;
+}
+.bt1 {
+	border-radius: 10rpx;
+	height: 80rpx;
+	font-size: 32rpx;
+	background-color: #8a5421;
+	margin-top: 273rpx;
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+

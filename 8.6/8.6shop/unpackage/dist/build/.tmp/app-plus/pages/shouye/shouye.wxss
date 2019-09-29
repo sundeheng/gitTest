@@ -1,0 +1,145 @@
+
+.uni-margin-wrap {
+		width:750rpx;
+}
+.scroll-Y {
+		height: 705rpx;
+		margin-top: 30rpx;
+		width: 490rpx;
+}
+.scroll-view-item {
+		height: 330rpx;
+}
+.scroll-view-item1 {
+		height: 450rpx;
+		width: 490rpx;
+		background-size: 100% 100%;
+}
+.ljcj{
+		height: 245rpx;
+		width: 85rpx;
+		background-size: 100% 100%;
+		margin-left: 385rpx;
+		margin-top: 50rpx;
+}
+.swiper {
+		height: 335rpx;
+}
+.swiper-item {
+		display: block;
+		height: 335rpx;
+		line-height: 335rpx;
+		text-align: center;
+		background-size: 100% 100%;
+}
+.ceng1{
+		height: 60rpx;
+}
+.shu1{
+		width: 10rpx;
+		height: 40rpx;
+		margin-top: 15rpx;
+		margin-left: 30rpx;
+		background-color: #896744;
+		border-radius: 10rpx;
+}
+.zi1{
+		font-size: 35rpx;
+		color: #000000;
+		margin-left: 20rpx;
+}
+.zi2{
+		font-size: 25rpx;
+		color: #000000;
+		margin-top: 10rpx;
+		text-align: center;/* 居中 */
+}
+.zi3{
+		font-size: 20rpx;
+		color: #896744;
+		text-align: center;/* 居中 */
+}
+.bt{
+		font-size: 20rpx;
+		line-height: 32rpx;
+		color: #FFFFFF;
+		background-color: #896744;
+		margin-left: 65rpx;
+}
+.ceng2{
+		height: 20rpx;
+		background-color: #F7F7F7;
+		/* border: 1rpx solid #000000; *//* 粗细 实线 颜色 */
+		/* border-radius: 10rpx; *//* 圆角弧度 */
+}
+.ceng4{
+		margin-left: 20rpx;
+		height: 300rpx;
+		width: 220rpx;
+		border: 5rpx solid #F7F7F7;
+		border-radius: 10rpx;
+}
+.xiaotu{
+		height: 165rpx;
+		width: 220rpx;
+		background-size: 100% 100%;
+}
+	/* 提示窗口 */
+.uni-tip {
+		padding: 15rpx;
+		width: 600rpx;
+		height: 460rpx;
+		background: #fff;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		border-radius: 10rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+}
+.zhongjian{
+		width: 410rpx;
+		margin-left: 85rpx;
+		height: 410rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		/* background-color: #000000; */
+}
+.guanbi{
+		margin-bottom: 400rpx;
+		margin-left: 30rpx;
+		width: 45rpx;
+		height: 45rpx;
+}
+.zi5{
+		font-size: 30rpx;
+		text-align: center;
+		color: #000000;
+}
+.zi6{
+		font-size: 25rpx;
+		color: #1c1c1c;
+}
+.bt1{
+		background-color: #8a5421;
+		border-radius: 10rpx;
+		font-size: 25rpx;
+		color: #FFFFFF;
+		width: 180rpx;
+}
+	/* 	.swiper-list {
+		margin-top: 40upx;
+		margin-bottom: 0;
+	} */
+	/* 	.uni-common-mt{
+		margin-top:60upx;
+		position:relative;
+	} */
+	/* 	.info {
+		position: absolute;
+		right:20upx;
+	} */
+

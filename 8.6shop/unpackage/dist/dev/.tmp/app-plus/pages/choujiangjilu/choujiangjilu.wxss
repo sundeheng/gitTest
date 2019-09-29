@@ -1,0 +1,17 @@
+
+.content {
+	width: 750rpx;
+	height: 1334rpx;
+	background-color: #e5e5e5;
+}
+.ceng1{
+	margin-left: 30rpx;
+	margin-right: 30rpx;
+}
+.ceng2 {
+	margin-top: 20rpx;
+	height: 116rpx;
+	background-color: #FFFFFF;
+	border-radius: 10rpx;
+}
+

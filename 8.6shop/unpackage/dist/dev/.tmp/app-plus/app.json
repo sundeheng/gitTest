@@ -1,0 +1,65 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/shouye/shouye",
+    "pages/youxi/youxi",
+    "pages/shangcheng/shangcheng",
+    "pages/wode/wode",
+    "pages/duanxindenglu/duanxindenglu",
+    "pages/zhuce/zhuce",
+    "pages/zhaohuimima/zhaohuimima",
+    "pages/choujiangjilu/choujiangjilu",
+    "pages/xiugaishoujihao/xiugaishoujihao",
+    "pages/xiugaishoujihao2/xiugaishoujihao2",
+    "pages/gerenxinxi/gerenxinxi",
+    "pages/xuanzeshouhuodizhi/xuanzeshouhuodizhi",
+    "pages/tianjiashouhuodizhi/tianjiashouhuodizhi"
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "uni-app",
+    "navigationBarBackgroundColor": "#F8F8F8",
+    "backgroundColor": "#F8F8F8"
+  },
+  "tabBar": {
+    "color": "#a2a2a2",
+    "selectedColor": "#896744",
+    "borderStyle": "black",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/shouye/shouye",
+        "text": "首页",
+        "iconPath": "static/daohanglan/icon_sy_n.png",
+        "selectedIconPath": "static/daohanglan/icon_sy_y.png"
+      },
+      {
+        "pagePath": "pages/youxi/youxi",
+        "text": "游戏",
+        "iconPath": "static/daohanglan/icon_yx_n.png",
+        "selectedIconPath": "static/daohanglan/icon_yx_y.png"
+      },
+      {
+        "pagePath": "pages/shangcheng/shangcheng",
+        "text": "商城",
+        "iconPath": "static/daohanglan/icon_sc_n.png",
+        "selectedIconPath": "static/daohanglan/icon_sc_y.png"
+      },
+      {
+        "pagePath": "pages/wode/wode",
+        "text": "我的",
+        "iconPath": "static/daohanglan/icon_wd_n.png",
+        "selectedIconPath": "static/daohanglan/icon_wd_y.png"
+      }
+    ]
+  },
+  "nvueCompiler": "uni-app",
+  "renderer": "auto",
+  "splashscreen": {
+    "alwaysShowBeforeRender": true,
+    "autoclose": false
+  },
+  "appname": "8.6shop",
+  "compilerVersion": "2.3.3",
+  "usingComponents": {}
+}
