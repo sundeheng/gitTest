@@ -3,72 +3,132 @@
 			<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
 			@scroll="scroll">
 		<view id="demo3" class="scroll-view-item  uni-flex uni-row">
+			<view class="ceng6">
 			<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
-			</view>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				</view>
+			<view class="ceng6">
 			<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
-			</view>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				</view>
+			<view class="ceng6">
 			<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				<view class="ceng4">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
-				<button type="default" size="mini" class="bt">兑换</button>
-			</view>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+				<view class="bt" @tap="modal1">兑换</view>
+				</view>
+				</view>
+				</view>
 		</view>
 		</scroll-view>
 	</view>
@@ -111,6 +171,13 @@
 						icon:"none",
 						title:"纵向滚动 scrollTop 值已被修改为 0"
 					})
+				},
+				modal1: function(e){
+					uni.showModal({
+						content:"您的积分不足!请兑换\n其他商品...",
+						confirmColor: "#87572C",
+						cancelColor:"#939393"
+					})
 				}
 	/* 			changeIndicatorDots(e) {
 					this.indicatorDots = !this.indicatorDots
@@ -132,8 +199,12 @@
 	.scroll-Y {
 		/* height: 1334rpx; */
 	}
-	.ceng4{
+	.ceng6{
 		margin-left: 17rpx;
+	}
+	.ceng4{
+		margin-top: 20rpx;
+		/* margin-left: 17rpx; */
 		height: 300rpx;
 		width: 220rpx;
 		border: 5rpx solid #F7F7F7;
@@ -143,17 +214,18 @@
 		height: 1334rpx;
 	}
 	.xiaotu{
-		margin-top: 10rpx;
 		height: 165rpx;
 		width: 220rpx;
 		background-size: 100% 100%;
 	}
 	.bt{
+		border-radius: 10rpx;
+		padding-left: 20rpx;
+		padding-right: 20rpx;
 		font-size: 20rpx;
 		line-height: 32rpx;
 		color: #FFFFFF;
 		background-color: #896744;
-		margin-left: 65rpx;
 	}
 	.zi2{
 		font-size: 25rpx;

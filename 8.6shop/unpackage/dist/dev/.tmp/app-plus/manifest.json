@@ -78,6 +78,7 @@
         }
       }
     },
+    "arguments": "{\"id\":1,\"name\":\"pages/hengpingyouxi/hengpingyouxi\",\"pathName\":\"pages/hengpingyouxi/hengpingyouxi\",\"query\":\"\"}",
     "allowsInlineMediaPlayback": true,
     "safearea": {
       "background": "#FFFFFF",

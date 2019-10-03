@@ -111,7 +111,7 @@
 	.kuang{
 		margin-left: 50rpx;
 		font-size: 28rpx;
-		color: #929292;
+		color: #1C1C1C;
 	}
 	.yjt1{
 		width: 35rpx;

@@ -41,10 +41,11 @@
 	margin-left: 675rpx;
 	width: 40rpx;
 	height: 40rpx;
-	background-size: 100% 100%;
+	background-size: 100% 100%;	
+	position: absolute;
 }
 .hx {
-	margin-top: 30rpx;
+	padding-top: 120rpx;
 	margin-left: 30rpx;
 	width: 690rpx;
 	height: 155rpx;
@@ -79,6 +80,7 @@
 	height: 35rpx;
 	margin-top: 75rpx;
 	margin-left: 640rpx;
+	position: absolute;
 }
 .yjt1 {
 	width: 40rpx;
@@ -118,5 +120,111 @@
 	margin-top: 233rpx;
 	color: #ffffff;
 	font-size: 35rpx;
+}
+/* 提示窗口 */
+.uni-tip {
+		width: 700rpx;
+		height: 850rpx;
+		background: #fff;
+		-webkit-box-sizing: border-box;
+		        box-sizing: border-box;
+		border-radius: 20rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+}
+.qiandao1{
+		height: 230rpx;
+		background-color: #b38350;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+}
+.qiandao2{
+		height: 230rpx;
+}
+.qiandao3{
+		height: 90rpx;
+		width: 400rpx;
+		background-color: #c17a37;
+		font-size: 40rpx;
+		color: #FFFFFF;
+		border-radius: 50rpx;
+		padding-top: 10rpx;
+}
+.qiandao5{
+		height: 230rpx;
+}
+.qiandao6{
+		height: 25rpx;
+		margin-top: 30rpx;
+}
+.qiandao7{
+		height: 175rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+}
+.qiandaotu{
+		width: 120rpx;
+		height: 185rpx;
+		/* background-color: #000000; */
+		/* border-radius: 20rpx; */
+}
+.hengxian{
+		width: 50rpx;
+		height: 5rpx;
+		background-color: #DD524D;
+}
+.hengxian1{
+		width: 50rpx;
+		height: 5rpx;
+		background-color: #d1d5d1;
+}
+.qiandaozi{
+		color: #FFFFFF;
+		font-size: 30rpx;
+		background-color: #b68655;
+		height: 50rpx;
+		border-top-left-radius: 20rpx;
+		border-top-right-radius: 20rpx;
+}
+.qiandaotu1{
+		background-color: #fae4cf;
+		height: 100rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+		border-bottom-left-radius: 20rpx;
+		border-bottom-right-radius: 20rpx;
+}
+.qiandaojifen{
+		color: #d1d5d1;
+		font-size: 20rpx;
+}
+.dui{
+		width: 30rpx;
+		height: 30rpx;
+}
+.cha{
+		width: 40rpx;
+		height: 80rpx;
+		-webkit-box-align: center;
+		-webkit-align-items: center;
+		    -ms-flex-align: center;
+		        align-items: center;
+}
+.cha1{
+		width: 40rpx;
+		height: 40rpx;
+		margin-left: -35rpx;
+}
+.shugang{
+		background-color: #FFFFFF;
+		width: 5rpx;
+		height: 40rpx;
+		margin-top: -15rpx;
 }
 

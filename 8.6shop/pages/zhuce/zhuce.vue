@@ -8,13 +8,15 @@
 			<!-- 横向的手机号输入框div -->
 			<view class="ceng2 uni-flex uni-row ">
 				<!-- +86字段 -->
-				<view class="text">+86</view>
+				<picker @change="bindPickerChange" :value="index" :range="array" range-key="name">
+					<view class="shuzi"><text class="shuzi1">{{array[index].name}}</text></view>
+				</picker>
 				<!-- 向下箭头 -->
 				<view class=""><image style="width: 25rpx;height: 25rpx; margin-top: 25rpx;" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" type="number" placeholder="请输入手机号登录" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" type="number" placeholder="请输入手机号登录" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
@@ -25,7 +27,7 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" type="number" placeholder="请输入验证码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" type="number" placeholder="请输入验证码" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
@@ -36,7 +38,7 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" password type="text" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" password type="text" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
@@ -47,7 +49,7 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" password type="text" placeholder="请再次输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" password type="text" placeholder="请再次输入密码" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 登录按钮 -->
 			<button type="primary" class="bt1" >注册</button>
@@ -59,11 +61,17 @@
 	export default {
 		data() {
 			return {
-				imageURL: '/static/denglu/bg_dl.png'
+				imageURL: '/static/denglu/bg_dl.png',
+				title: 'picker',
+				array: [{name:'+86'},{name: '+87'}, {name:'+88'}, {name:'+89'}],
+				index: 0
 			}
 		},
 		methods: {
-			
+			bindPickerChange: function(e) {
+				console.log('picker发送选择改变，携带值为：' + e.target.value)
+				this.index = e.target.value
+			}
 		}
 	}
 </script>
@@ -91,6 +99,7 @@
 	height: 80rpx;
 	background-color: #515151;
 	border-radius: 10rpx;
+	align-items: center;
 }
 .text {
 	margin: 15upx 10upx;
@@ -112,5 +121,18 @@
 	font-size: 32rpx;
 	background-color: #8a5421;
 	margin-top: 65rpx;
+}
+.shuzi{
+	width: 70rpx;
+	align-items: center;
+	text-align: right;
+/* 	padding-left: 20rpx;
+	padding-top: 20rpx; */
+	background-color: #515151;
+	border-radius: 10rpx;
+}
+.shuzi1{
+	color: #FFFFFF;
+	font-size:25upx;
 }
 </style>

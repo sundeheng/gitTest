@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/hengpingyouxi/hengpingyouxi",
     "pages/index/index",
     "pages/shouye/shouye",
     "pages/youxi/youxi",

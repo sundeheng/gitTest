@@ -7,7 +7,7 @@
 		</view>
 		<view class="ceng1 uni-flex uni-row ">
 			<view style="font-size: 28rpx; color: #000000;">获得***奖品*1</view>
-			<view style="margin-left: 360rpx;"><button type="primary" size="mini" style="background-color: #d1d1d1; font-size: 20rpx;">已领取</button></view>
+			<view style="margin-left: 360rpx;"><uni-fav :checked="checkList[0]" :content-text="contentText" star="false" class="favBtn" @click="favClick(0)" bg-color="#8a5421" bg-color-checked="#e5e5e5" fg-color="#ffffff" fg-color-checked="#ffffff" /></view>
 		</view>
 		<view class="ceng1 uni-flex uni-row ">
 		</view>
@@ -19,7 +19,7 @@
 		</view>
 		<view class="ceng1 uni-flex uni-row ">
 			<view style="font-size: 28rpx; color: #000000;">获得***奖品*1</view>
-			<view style="margin-left: 360rpx;"><button type="primary" size="mini" style="background-color: #d1d1d1; font-size: 20rpx;">已领取</button></view>
+			<view style="margin-left: 360rpx;"><uni-fav :checked="checkList[1]" :content-text="contentText" star="false" class="favBtn" @click="favClick(1)" bg-color="#8a5421" bg-color-checked="#e5e5e5" fg-color="#ffffff" fg-color-checked="#ffffff" /></view>
 		</view>
 		<view class="ceng1 uni-flex uni-row ">
 		</view>
@@ -28,14 +28,32 @@
 </template>
 
 <script>
+	import uniFav from '@/components/uni-fav/uni-fav.vue'
+	import uniNavBar from '@/components/uni-nav-bar/uni-nav-bar.vue'
 	export default {
+		components: {
+			uniFav,
+			uniNavBar
+		},
 		data() {
 			return {
-				
+				checkList: [false, true],
+				contentText: {
+					contentDefault: '领取',
+					contentFav: '已领取'
+				}
 			}
 		},
 		methods: {
-			
+			favClick(index) {
+				
+				if(this.checkList[index] == true){
+					this.checkList[index] == this.checkList[index];
+				}else{
+					this.checkList[index] = !this.checkList[index];
+				}
+				this.$forceUpdate()
+			}
 		}
 	}
 </script>

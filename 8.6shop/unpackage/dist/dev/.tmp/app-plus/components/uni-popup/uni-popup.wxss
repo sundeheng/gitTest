@@ -83,8 +83,8 @@
 	        box-sizing: border-box
 }
 .uni-popup__wrapper.uni-custom .uni-popup__wrapper-box {
-	padding: 30rpx;
-	background: #fff
+	/* padding: 30upx; */
+	background: ##F7F7F7
 }
 .uni-popup__wrapper.uni-custom.center .uni-popup__wrapper-box {
 	position: relative;

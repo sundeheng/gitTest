@@ -2,5 +2,8 @@
   "navigationBarTitleText": "抽奖记录",
   "navigationBarTextStyle": "white",
   "navigationBarBackgroundColor": "#896744",
-  "usingComponents": {}
+  "usingComponents": {
+    "uni-fav": "/components/uni-fav/uni-fav",
+    "uni-nav-bar": "/components/uni-nav-bar/uni-nav-bar"
+  }
 }

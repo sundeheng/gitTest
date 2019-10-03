@@ -8,13 +8,15 @@
 			<!-- 横向的手机号输入框div -->
 			<view class="ceng2 uni-flex uni-row ">
 				<!-- +86字段 -->
-				<view class="text">+86</view>
+				<picker @change="bindPickerChange" :value="index" :range="array" range-key="name">
+					<view class="shuzi"><text class="shuzi1">{{array[index].name}}</text></view>
+				</picker>
 				<!-- 向下箭头 -->
 				<view class=""><image style="width: 25rpx;height: 25rpx; margin-top: 25rpx;" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" type="number" placeholder="请输入手机号" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" type="number" placeholder-class="text2" placeholder="请输入手机号" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
@@ -25,7 +27,7 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="uni-input" password type="text" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 忘记密码短信验证 横向排列的div -->
 			<view class="uni-flex uni-row">
@@ -35,10 +37,10 @@
 				<view class="text1" @tap="navigateTo1"  style="margin-left: 305rpx;">忘记密码?</view>
 			</view>
 			<!-- 记住密码横向div -->
-			<view class="uni-flex uni-row">
+			<view class="uni-flex uni-row" style="align-items: center;">
 				<!-- 对号图标 -->
-				<image src="../../static/denglu/icon_jzmm_dl.png" mode="aspectFit" style="width: 35rpx;height: 35rpx; margin:20rpx 25rpx"></image>
-				<view class="text1" style="margin-top: 10rpx;">记住密码</view>
+				<radio value="r2" :checked="checked" color="#26904d" style="transform:scale(0.7);margin-top: 10rpx;" @tap="jizhumima"/>
+				<view class="text1" style="margin-top: 10rpx;" @tap="jizhumima">记住密码</view>
 			</view>
 			<!-- 登录按钮 -->
 			<button type="primary" class="bt" @tap="navigateTo2" style="background-color: #8a5421;margin-top: 15rpx;">登录</button>
@@ -50,13 +52,25 @@
 
 <script>
 export default {
+	
 	data() {
 		return {
+			checked: true,
 			/* 返回的最外层背景图片路径 */
-			imageURL: '/static/denglu/bg_dl.png'
+			imageURL: '/static/denglu/bg_dl.png',
+			title: 'picker',
+			array: [{name:'+86'},{name: '+87'}, {name:'+88'}, {name:'+89'}],
+			index: 0
 		};
 	},
 	methods: {
+		jizhumima(){
+			this.checked = !this.checked
+		},
+		bindPickerChange: function(e) {
+			console.log('picker发送选择改变，携带值为：' + e.target.value)
+			this.index = e.target.value
+		},
 		navigateTo() {
 			uni.navigateTo({
 				url:'../duanxindenglu/duanxindenglu'
@@ -77,6 +91,9 @@ export default {
 				url:'../zhuce/zhuce'
 			})
 		}
+	},
+	onShow() {
+		plus.screen.lockOrientation("portrait-primary");
 	}
 };
 </script>
@@ -102,28 +119,41 @@ export default {
 	position: relative;
 }
 .ceng2 {
+	align-items: center;
 	height: 80rpx;
 	background-color: #515151;
 	border-radius: 10rpx;
 }
 .text {
-	margin: 15upx 10upx;
+	margin: 15rpx 10rpx;
 	text-align: center;
 	color: #ffffff;
-	font-size: 26upx;
+	font-size: 26rpx;
 }
 .text1 {
-	text-align: left;
 	color: #ffffff;
-	font-size: 26upx;
+	font-size: 26rpx;
 }
 .inp {
 	color: #ffffff;
-	font-size: 26upx;
+	font-size: 26rpx;
 }
 .bt {
 	border-radius: 10rpx;
 	height: 80rpx;
 	font-size: 32rpx;
+}
+.shuzi{
+	width: 70rpx;
+	align-items: center;
+	text-align: right;
+/* 	padding-left: 20rpx;
+	padding-top: 20rpx; */
+	background-color: #515151;
+	border-radius: 10rpx;
+}
+.shuzi1{
+	color: #FFFFFF;
+	font-size:25rpx;
 }
 </style>

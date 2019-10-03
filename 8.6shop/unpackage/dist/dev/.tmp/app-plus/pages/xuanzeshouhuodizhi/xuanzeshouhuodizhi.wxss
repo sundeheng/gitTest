@@ -1,34 +1,34 @@
 
-.di1{
+.di1 {
 	height: 205rpx;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 }
-.hang1{
+.hang1 {
 	padding-top: 25rpx;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
 }
-.zi1{
+.zi1 {
 	font-size: 30rpx;
 	color: #000000;
 }
-.zi2{
+.zi2 {
 	font-size: 30rpx;
 	color: #000000;
 	margin-left: 75rpx;
 }
-.zi3{
+.zi3 {
 	margin-left: 30rpx;
 	font-size: 27rpx;
 	color: #000000;
 }
-.hang2{
+.hang2 {
 	height: 3rpx;
-	background-color: #F7F7F7;
+	background-color: #f7f7f7;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
 }
-.hang3{
+.hang3 {
 	height: 75rpx;
 	margin-left: 30rpx;
 	margin-right: 30rpx;
@@ -37,11 +37,11 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.tu1{
+.tu1 {
 	width: 35rpx;
 	height: 35rpx;
 }
-.zi4{
+.zi4 {
 	margin-left: 15rpx;
 	font-size: 25rpx;
 	color: #929292;

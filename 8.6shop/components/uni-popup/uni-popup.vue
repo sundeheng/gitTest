@@ -157,8 +157,8 @@
 	}
 
 	.uni-popup__wrapper.uni-custom .uni-popup__wrapper-box {
-		padding: 30upx;
-		background: #fff
+		/* padding: 30upx; */
+		background: ##F7F7F7
 	}
 
 	.uni-popup__wrapper.uni-custom.center .uni-popup__wrapper-box {
