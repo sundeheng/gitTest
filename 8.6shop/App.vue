@@ -1,5 +1,9 @@
 <script>
 	export default {
+		globalData:{
+			shoujihao: '',
+			nicheng:'张三',
+		},
 		onLaunch: function() {
 			console.log('App Launch')
 		},

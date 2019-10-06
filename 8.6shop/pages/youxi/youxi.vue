@@ -1,8 +1,8 @@
 <template>
 	<view>
-		<view class="tu1"><image style="width: 670rpx;height: 300rpx;" src="../../static/youxi/btn_5jf.png" mode="aspectFit" @tap="jifenchang5"></image></view>
-		<view class="tu1"><image style="width: 670rpx;height: 300rpx;" src="../../static/youxi/btn_50jf.png" mode="aspectFit"></image></view>
-		<view class="tu1"><image style="width: 670rpx;height: 300rpx;" src="../../static/youxi/btn_500jf.png" mode="aspectFit"></image></view>
+		<view class="tu1"><image style="width: 650rpx;height: 290rpx;" src="../../static/youxi/btn_5jf.png" mode="aspectFit" @tap="jifenchang5"></image></view>
+		<view class="tu1"><image style="width: 650rpx;height: 290rpx;" src="../../static/youxi/btn_50jf.png" mode="aspectFit"></image></view>
+		<view class="tu1"><image style="width: 650rpx;height: 290rpx;" src="../../static/youxi/btn_500jf.png" mode="aspectFit"></image></view>
 		<view class="zi1" @tap="togglePopup" >游戏规则</view>
 		<uni-popup :show="show">
 			<view class="uni-flex uni-row" style="-webkit-justify-content: flex-end;justify-content: flex-end;" ><image @tap="togglePopup1" style="width: 75rpx;height: 75rpx; margin-bottom: -45rpx; margin-right: -8rpx;" src="../../static/youxiguize/icon_gb_yxgz.png" mode="aspectFit"></image></view>
@@ -46,20 +46,23 @@
 						url:'../hengpingyouxi/hengpingyouxi'
 					})
 				}
+		},
+		onShow() {
+			plus.screen.lockOrientation('portrait-primary');
 		}
 	}
 </script>
 
 <style>
 .tu1{
-	margin-top: 25rpx;
+	margin-top: 20rpx;
 	align-items: center;
 	margin-left: 45rpx;
 }
 .zi1{
 	margin-left: 550rpx;
 	margin-right: 65rpx;
-	margin-top: 25rpx;
+	margin-top: 20rpx;
 	color: #89633B;
 	font-size: 35rpx;
 	border-bottom: 1rpx solid #89633B;

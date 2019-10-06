@@ -173,6 +173,9 @@
 		/* border-radius: 20rpx; */
 }
 .hengxian{
+		margin-top: 87rpx;
+		margin-left: -50rpx;
+		position: absolute;
 		width: 50rpx;
 		height: 5rpx;
 		background-color: #DD524D;
@@ -200,13 +203,22 @@
 		border-bottom-left-radius: 20rpx;
 		border-bottom-right-radius: 20rpx;
 }
+.qiandaotu2{
+		position: absolute;
+		background-color: #fae4cf;
+		height: 100rpx;
+		margin-top: -100rpx;
+		margin-left: 20rpx;
+}
 .qiandaojifen{
 		color: #d1d5d1;
 		font-size: 20rpx;
 }
 .dui{
+		position: absolute;
 		width: 30rpx;
 		height: 30rpx;
+		margin-top: 5rpx;
 }
 .cha{
 		width: 40rpx;

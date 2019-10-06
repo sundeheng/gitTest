@@ -27,7 +27,8 @@
 .bt{
 	height: 40rpx;
 	margin-top: 20rpx;
-	margin-left: 75rpx;
+	margin-left: -125rpx;
+	position: absolute;
 	color: #896744;
 	font-size: 25rpx; 
 	border: 3rpx solid #896744;

@@ -12,7 +12,7 @@
 			<view class="inp"><input class="srk" type="number" placeholder="请输入新手机号" /></view>
 			<!-- 叉号 -->
 			<view style="width: 95rpx;">
-				<image style="width: 30rpx;height: 30rpx; margin-top: 20rpx;margin-left: 160rpx;" src="../../static/duanxindenglu/icon_sc_dl.png" mode="aspectFit"></image>
+				<image style="width: 30rpx;height: 30rpx; margin-top: 20rpx;margin-left: -75rpx; position: absolute;" src="../../static/duanxindenglu/icon_sc_dl.png" mode="aspectFit"></image>
 			</view>
 		</view>
 		<!-- 横向的密码输入框div -->
@@ -70,7 +70,8 @@ export default {
 .bt{
 	height: 40rpx;
 	margin-top: 20rpx;
-	margin-left: 75rpx;
+	margin-left: -125rpx;
+	position: absolute;
 	color: #896744;
 	font-size: 25rpx; 
 	border: 3rpx solid #896744;

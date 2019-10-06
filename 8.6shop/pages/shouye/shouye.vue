@@ -1,153 +1,124 @@
 <template>
-	<view class="uni-margin-wrap">
-		<view >
-			<swiper class="swiper" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-				<swiper-item>
-					<view class="swiper-item" :style="{ backgroundImage: 'url(' + imageURLa1 + ')' }"></view>
-				</swiper-item>
-				<swiper-item>
-					<view class="swiper-item" :style="{ backgroundImage: 'url(' + imageURLa2 + ')' }"></view>
-				</swiper-item>
-				<swiper-item>
-					<view class="swiper-item" :style="{ backgroundImage: 'url(' + imageURLa3 + ')' }"></view>
-				</swiper-item>
-			</swiper>
+	<view>
+		<swiper class="" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
+			<swiper-item>
+				<view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa1 + ')' }"></view>
+			</swiper-item>
+			<swiper-item>
+				<view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa2 + ')' }"></view>
+			</swiper-item>
+			<swiper-item>
+				<view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa3 + ')' }"></view>
+			</swiper-item>
+		</swiper>
+		<view class="uni-flex uni-row" style="margin-top: 15rpx;">
+			<view class="shu"></view>
+			<view class="jiangpinchi">奖品池</view>
 		</view>
-		<view class="ceng1 uni-flex uni-row ">
-			<view class="shu1"></view>
-			<view class="zi1">奖品池</view>
-		</view>
-		<view class="ceng2"></view>
-		<view class="ceng3 uni-flex uni-row">
-			<view>
-				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
+		<view class="fengexian1"></view>
+		<view class="uni-flex uni-row" style="margin-top: 20rpx;">
+			<view class="">
+			<scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltoupper="upper" @scrolltolower="lower"
+			@scroll="scroll" show-scrollbar="true">
+				<view class="choujiangdatu" :style="{ backgroundImage: 'url(' + imageURL + ')' }">
+					<view class="choujiangjilu" @tap="choujiangjilu"></view>
+					<view class="lijichoujiang" @tap="lijichoujiang" :style="{ backgroundImage: 'url(' + imageURLBUY + ')' }"></view>
+				</view>
+				<view class="hengxiang uni-flex uni-row hengxiang">
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+				</view>
+				<view class="hengxiang uni-flex uni-row hengxiang">
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+				</view>
+				<view class="hengxiang uni-flex uni-row hengxiang">
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+					<view class="biankuang">
+						<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+						<view class="zi2">翡翠手镯</view>
+						<view class="zi3">2000积分</view>
+						<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+						<view class="bt" @tap="modal1">兑换</view>
+						</view>
+					</view>
+				</view>
+			</scroll-view>
+			</view>
+			<view style="margin-left: 20rpx;">
+				<scroll-view :scroll-top="scrollTop" scroll-y="true" @scrolltoupper="upper" @scrolltolower="lower"
 				@scroll="scroll" show-scrollbar="true">
-					<view id="demo1" class="scroll-view-item1" :style="{ backgroundImage: 'url(' + imageURL + ')' }">
-						<navigator url="../choujiangjilu/choujiangjilu" style="width: 100rpx;line-height: 50rpx; margin-left: 370rpx; font-size: 1rpx;color: #FFFFFF;">.</navigator>
-						<view class="ljcj" @tap="togglePopup('center', 'tip')" :style="{ backgroundImage: 'url(' + imageURLBUY + ')' }"></view>
+				<view class="biankuang">
+					<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+					<view class="zi2">翡翠手镯</view>
+					<view class="zi3">2000积分</view>
+					<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="bt" @tap="modal1">兑换</view>
 					</view>
-					<view class="">
-						<view id="demo2" class="scroll-view-item  uni-flex uni-row">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
-						<view id="demo3" class="scroll-view-item  uni-flex uni-row">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
+				</view>
+				<view class="biankuang" style="margin-top: 15rpx;">
+					<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+					<view class="zi2">翡翠手镯</view>
+					<view class="zi3">2000积分</view>
+					<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="bt" @tap="modal1">兑换</view>
 					</view>
+				</view>
+				<view class="biankuang" style="margin-top: 15rpx;">
+					<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+					<view class="zi2">翡翠手镯</view>
+					<view class="zi3">2000积分</view>
+					<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="bt" @tap="modal1">兑换</view>
+					</view>
+				</view>
+				<view class="biankuang" style="margin-top: 15rpx;">
+					<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
+					<view class="zi2">翡翠手镯</view>
+					<view class="zi3">2000积分</view>
+					<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="bt" @tap="modal1">兑换</view>
+					</view>
+				</view>
 				</scroll-view>
 			</view>
-			
-			<view class="ceng5">
-				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-				@scroll="scroll" show-scrollbar="true">
-					<view class="">
-						<view id="demo2" class="scroll-view-item ">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
-						<view id="demo3" class="scroll-view-item ">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
-						<view id="demo2" class="scroll-view-item ">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
-						<view id="demo3" class="scroll-view-item ">
-							<view class="ceng4">
-								<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-								<view class="zi2">翡翠手镯</view>
-								<view class="zi3">2000积分</view>
-								<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-								<view class="bt" @tap="modal1">兑换</view>
-								</view>
-							</view>
-						</view>
-					</view>
-				</scroll-view>
-			</view>
-			<!-- <view>
-				<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
-				@scroll="scroll">
-					<view id="demo1" class="scroll-view-item uni-bg-red">A</view>
-					<view id="demo2" class="scroll-view-item uni-bg-green">B</view>
-					<view id="demo3" class="scroll-view-item uni-bg-blue">C</view>
-				</scroll-view>
-			</view> -->
 		</view>
-		<!-- <view class="swiper-list">
-			<view class="uni-list-cell uni-list-cell-pd">
-				<view class="uni-list-cell-db">指示点</view>
-				<switch :checked="indicatorDots" @change="changeIndicatorDots" />
-			</view>
-			<view class="uni-list-cell uni-list-cell-pd">
-				<view class="uni-list-cell-db">自动播放</view>
-				<switch :checked="autoplay" @change="changeAutoplay" />
-			</view>
-		</view> -->
-
-		<!-- <view class="uni-padding-wrap">
-			<view class="uni-common-mt">
-				<text>幻灯片切换时长(ms)</text>
-				<text class="info">{{duration}}</text>
-			</view>
-			<slider @change="durationChange" :value="duration" min="500" max="2000" />
-			<view class="uni-common-mt">
-				<text>自动播放间隔时长(ms)</text>
-				<text class="info">{{interval}}</text>
-			</view>
-			<slider @change="intervalChange" :value="interval" min="2000" max="10000" />
-		</view> -->
-		<uni-popup :show="show" :type="type" :custom="true" :mask-click="false" @change="change">
-			<view class="uni-tip uni-flex uni-row" >
+			<view class="uni-tip uni-flex uni-row" v-if="choujiangtankuang">
 				<view class="zhongjian">
 					<view class="zi5" >恭喜你,抽到XXX奖品!</view>
 					<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
@@ -161,11 +132,11 @@
 						<view  class="bt1" @tap="xuanzedizhi">立即领取</view>
 					</view>
 				</view>
-				<image class="guanbi" src="../../static/shouye/guanbi.png" mode="aspectFit" @tap="cancel('tip')"></image>
+				<image class="guanbi" src="../../static/shouye/guanbi.png" mode="aspectFit" @tap="guanbitankuang"></image>
 			</view>
-		</uni-popup>
 	</view>
 </template>
+
 <script>
 	import uniPopup from '@/components/uni-popup/uni-popup.vue'
 	export default {
@@ -174,7 +145,7 @@
 		},
 		data() {
 			return {
-				show: false,
+				choujiangtankuang: false,
 				type: '',
 				background: ['color1', 'color2', 'color3'],
 				indicatorDots: true,
@@ -183,7 +154,6 @@
 				duration: 500,
 				scrollTop: 0,old: {
 					scrollTop: 0
-				
 				},
 				imageURL: '/static/shouye/dat.png',
 				imageURLX: '/static/shouye/xiaot.png',
@@ -204,32 +174,14 @@
 					url:'../xuanzeshouhuodizhi/xuanzeshouhuodizhi'
 				})
 			},
-			togglePopup(type, open) {
-				this.type = type
-					if (open === 'tip') {
-						this.show = true
-					} else {
-						this.$refs[open].open()
-					}
-				},
-				cancel(type) {
-					if (type === 'tip') {
-						this.show = false
-						return
-					}
-					this.$refs[type].close()
-				},
-				change(e) {
-					console.log(e.show)
-				},
-			upper: function(e) {
-				console.log(e)
+			lijichoujiang(){
+				this.choujiangtankuang = true;
 			},
-			lower: function(e) {
-				console.log(e)
+			guanbitankuang(){
+				this.choujiangtankuang = false;
 			},
 			scroll: function(e) {
-				console.log(e)
+				//console.log(e)
 				this.old.scrollTop = e.detail.scrollTop
 			},
 			goTop: function(e) {
@@ -250,72 +202,64 @@
 					cancelColor:"#939393"
 				})
 			}
-/* 			changeIndicatorDots(e) {
-				this.indicatorDots = !this.indicatorDots
-			}, */
-/* 			changeAutoplay(e) {
-				this.autoplay = !this.autoplay
-			}, */
-/* 			intervalChange(e) {
-				this.interval = e.target.value
-			}, */
-/* 			durationChange(e) {
-				this.duration = e.target.value
-			} */
-		},
+		}
 	}
 </script>
 
 <style>
-/* 	.uni-margin-wrap {
-		width:600rpx;
-	} */
-	.scroll-Y {
-		height: 705rpx;
-		margin-top: 30rpx;
-		width: 490rpx;
+	.guanggaowei{
+		background-size: 100% 100%;
+		height: 350rpx;
 	}
-	.scroll-view-item {
-		height: 330rpx;
+	.shu{
+		height: 35rpx;
+		width: 7rpx;
+		margin-left: 30rpx;
+		background-color: #896744;
+		border-radius: 10rpx;
+		margin-top: 10rpx;
 	}
-	.scroll-view-item1 {
+	.jiangpinchi{
+		font-size: 30rpx;
+		margin-left: 15rpx;
+	}
+	.fengexian1{
+		height: 20rpx;
+		background-color: #F7F7F7;
+	}
+	.choujiangdatu{
 		height: 450rpx;
 		width: 490rpx;
 		background-size: 100% 100%;
 	}
-	.ljcj{
+	.lijichoujiang{
 		height: 245rpx;
 		width: 85rpx;
 		background-size: 100% 100%;
-		margin-left: 385rpx;
-		margin-top: 50rpx;
+		position: absolute;
+		top: 6%;
+		left: 80%;
 	}
-	.swiper {
-		height: 335rpx;
+	.choujiangjilu{
+		height: 30rpx;
+		width: 85rpx;
+		position: absolute;
+		top: 1.8%;
+		left: 79%;
 	}
-	.swiper-item {
-		display: block;
-		height: 335rpx;
-		line-height: 335rpx;
-		text-align: center;
-		background-size: 100% 100%;
-	}
-	.ceng1{
-		height: 60rpx;
-		
-	}
-	.shu1{
-		width: 10rpx;
-		height: 40rpx;
+	.hengxiang{
 		margin-top: 15rpx;
-		margin-left: 30rpx;
-		background-color: #896744;
+		margin-left: 25rpx;
+	}
+	.biankuang{
+		height: 300rpx;
+		border: 5rpx solid #F7F7F7;
 		border-radius: 10rpx;
 	}
-	.zi1{
-		font-size: 35rpx;
-		color: #000000;
-		margin-left: 20rpx;
+	.xiaotu{
+		height: 165rpx;
+		width: 220rpx;
+		background-size: 100% 100%;
 	}
 	.zi2{
 		font-size: 25rpx;
@@ -337,36 +281,17 @@
 		color: #FFFFFF;
 		background-color: #896744;
 	}
-	.ceng2{
-		height: 20rpx;
-		background-color: #F7F7F7;
-		/* border: 1rpx solid #000000; *//* 粗细 实线 颜色 */
-		/* border-radius: 10rpx; *//* 圆角弧度 */
-	}
-	.ceng4{
-		margin-left: 20rpx;
-		height: 300rpx;
-		width: 220rpx;
-		border: 5rpx solid #F7F7F7;
-		border-radius: 10rpx;
-	}
-	.ceng5{
-		margin-left: 215rpx;
-	}
-	.xiaotu{
-		height: 165rpx;
-		width: 220rpx;
-		background-size: 100% 100%;
-	}
-	/* 提示窗口 */
 	.uni-tip {
-		padding: 15rpx;
 		width: 600rpx;
 		height: 460rpx;
 		background: #fff;
 		box-sizing: border-box;
 		border-radius: 10rpx;
 		align-items: center;
+		position: fixed;
+		left: 10%;
+		top: 30%;
+		z-index: 998;
 	}
 	.zhongjian{
 		width: 410rpx;
@@ -391,25 +316,11 @@
 		color: #1c1c1c;
 	}
 	.bt1{
+		text-align: center;
 		width: 178rpx;
 		background-color: #8a5421;
 		border-radius: 10rpx;
 		font-size: 25rpx;
 		color: #FFFFFF;
-		
 	}
-/* 	.swiper-list {
-		margin-top: 40upx;
-		margin-bottom: 0;
-	} */
-	
-/* 	.uni-common-mt{
-		margin-top:60upx;
-		position:relative;
-	} */
-	
-/* 	.info {
-		position: absolute;
-		right:20upx;
-	} */
 </style>

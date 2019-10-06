@@ -1,0 +1,2 @@
+setCssToHead([".",[1],"anzhubeijing{ position: relative; top: ",[0,3],"; left: ",[0,3],"; -webkit-box-shadow:0px 0px 8px rgba(0, 0, 0, .1) inset; box-shadow:0px 0px 8px rgba(0, 0, 0, .1) inset; }\n",],undefined,{path:"./pages/test01/test01.wxss"})();
+document.dispatchEvent(new CustomEvent("generateFuncReady", { detail: { generateFunc: $gwx('./pages/test01/test01.wxml') } }));

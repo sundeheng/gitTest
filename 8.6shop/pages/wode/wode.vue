@@ -7,8 +7,8 @@
 			<view class="hx uni-flex uni-row" @tap="tiao">
 				<image class="tx" src="../../static/wode/touxiang.jpg" mode="aspectFit"></image>
 				<view class="zi">
-					<text class="mz">扎西德路</text>
-					<text class="sjh">12345678910</text>
+					<text class="mz">{{nicheng}}\n</text>
+					<text class="sjh">{{shoujihao}}</text>
 				</view>
 				<image class="yjt" src="../../static/wode/icon_jr_wd.png" mode="aspectFit"></image>
 			</view>
@@ -32,21 +32,23 @@
 				<view class="qiandao1"><image class="qiandao5" src="../../static/qiandao/bg_qd.png" mode="aspectFit"></image></view>
 				<view class="qiandao2">
 					<view class="qiandao6 uni-flex uni-row">
-						<view class="dui" style="margin-left: 130rpx;"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
-						<view class="dui" style="margin-left: 140rpx;"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
-						<view class="dui" style="margin-left: 140rpx;"></view>
-						<view class="dui" style="margin-left: 140rpx;"></view>
+						<view class="dui" style="margin-left: 125rpx;" v-show="dui1"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
+						<view class="dui" style="margin-left: 297rpx;" v-show="dui2"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
+						<view class="dui" style="margin-left: 460rpx;" v-show="dui3"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
+						<view class="dui" style="margin-left: 625rpx;" v-show="dui4"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 					</view>
 					<view class="qiandao7 uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
 						<view class="qiandaotu">
 							<view class="qiandaozi">第1天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
+							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
+							<view class="qiandaotu2" v-show="tu1"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" style="height: 70rpx; width: 75rpx;"></image></view>
 							<view class="qiandaojifen">+100积分</view>
 						</view>
-						<view class="hengxian"></view>
+						<view class="hengxian1"></view>
+						<view class="hengxian" v-show="xian1"></view>
 						<view class="qiandaotu">
 							<view class="qiandaozi">第2天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
+							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
 							<view class="qiandaojifen">+100积分</view>
 						</view>
 						<view class="hengxian1"></view>
@@ -63,9 +65,9 @@
 						</view>
 					</view>
 					<view class="qiandao6 uni-flex uni-row">
-						<view class="dui" style="margin-left: 220rpx;"></view>
-						<view class="dui" style="margin-left: 140rpx;"></view>
-						<view class="dui" style="margin-left: 140rpx;"></view>
+						<view class="dui" style="margin-left: 210rpx;" v-show="dui7"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
+						<view class="dui" style="margin-left: 375rpx;" v-show="dui6"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
+						<view class="dui" style="margin-left: 550rpx;" v-show="dui5"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 					</view>
 					<view class="qiandao7 uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
 						<view class="qiandaotu">
@@ -93,7 +95,7 @@
 						</view> -->
 					</view>
 				</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center; margin-top: 225rpx;"><view class="qiandao3" @tap="cancel('tip')">立即签到</view></view>
+				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center; margin-top: 225rpx;"><view class="qiandao3" @tap="lijiqiandao">立即签到</view></view>
 			</view>
 		</uni-popup>
 	</view>
@@ -107,6 +109,17 @@
 		},
 	data() {
 		return {
+			dui1:false,
+			dui2:false,
+			dui3:false,
+			dui4:false,
+			dui5:false,
+			dui6:false,
+			dui7:false,
+			tu1:false,
+			xian1:false,
+			nicheng:'',
+			shoujihao:'', 
 			show: false,
 			type: '',
 			imageURL: '/static/wode/icon_wqd_wo.png',
@@ -132,6 +145,11 @@
 			change(e) {
 				console.log(e.show)
 			},
+			lijiqiandao(){
+				this.dui1=true;
+				this.tu1=true;
+				this.xian1=true;
+			},
 		tiao() {
 			uni.navigateTo({
 				url: '../gerenxinxi/gerenxinxi'
@@ -147,7 +165,12 @@
 				url: '../index/index'
 			});
 		}
+	},
+	onShow() {
+		this.shoujihao = getApp().globalData.shoujihao;
+		this.nicheng = getApp().globalData.nicheng;
 	}
+	
 };
 </script>
 
@@ -317,6 +340,9 @@
 		/* border-radius: 20rpx; */
 	}
 	.hengxian{
+		margin-top: 87rpx;
+		margin-left: -50rpx;
+		position: absolute;
 		width: 50rpx;
 		height: 5rpx;
 		background-color: #DD524D;
@@ -341,13 +367,22 @@
 		border-bottom-left-radius: 20rpx;
 		border-bottom-right-radius: 20rpx;
 	}
+	.qiandaotu2{
+		position: absolute;
+		background-color: #fae4cf;
+		height: 100rpx;
+		margin-top: -100rpx;
+		margin-left: 20rpx;
+	}
 	.qiandaojifen{
 		color: #d1d5d1;
 		font-size: 20rpx;
 	}
 	.dui{
+		position: absolute;
 		width: 30rpx;
 		height: 30rpx;
+		margin-top: 5rpx;
 	}
 	.cha{
 		width: 40rpx;

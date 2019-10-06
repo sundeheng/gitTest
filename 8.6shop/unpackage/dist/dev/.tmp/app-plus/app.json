@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/hengpingyouxi/hengpingyouxi",
     "pages/index/index",
+    "pages/hengpingyouxi/hengpingyouxi",
     "pages/shouye/shouye",
     "pages/youxi/youxi",
     "pages/shangcheng/shangcheng",
@@ -60,7 +60,7 @@
     "alwaysShowBeforeRender": true,
     "autoclose": false
   },
-  "appname": "8.6shop",
+  "appname": "斗地主",
   "compilerVersion": "2.3.3",
   "usingComponents": {}
 }

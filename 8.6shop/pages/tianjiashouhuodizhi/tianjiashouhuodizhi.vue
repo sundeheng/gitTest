@@ -102,7 +102,7 @@
 	.zi1{
 		font-size: 28rpx;
 		color: #000000;
-		margin-left: 30rpx;
+		
 	}
 	.kuang1{
 		font-size: 25rpx;

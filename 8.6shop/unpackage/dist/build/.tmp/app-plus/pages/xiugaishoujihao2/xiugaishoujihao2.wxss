@@ -1,11 +1,14 @@
 
+.srk{
+		margin-top: 12rpx;
+		color: #1C1C1C;
+}
 .content {
 		width: 750rpx;
 		height: 1334rpx;
 		background-color: #e5e5e5;
 }
 .ceng2 {
-	margin-top: 20rpx;
 	height: 80rpx;
 	background-color: #FFFFFF;
 	border-radius: 10rpx;
@@ -22,14 +25,22 @@
 	font-size: 26rpx;
 }
 .bt{
+	height: 40rpx;
+	margin-top: 20rpx;
+	margin-left: -125rpx;
+	position: absolute;
 	color: #896744;
 	font-size: 25rpx; 
-	margin:10rpx 10rpx 10rpx 10rpx;
+	border: 3rpx solid #896744;
+	border-radius: 10rpx;
 }
 .bt1 {
 	border-radius: 10rpx;
+	text-align: center;
 	height: 80rpx;
-	font-size: 32rpx;
+	font-size: 35rpx;
+	padding-top: 10rpx;
+	color: #FFFFFF;
 	background-color: #8a5421;
 	margin-top: 273rpx;
 	margin-left: 30rpx;

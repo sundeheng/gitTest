@@ -1,6 +1,7 @@
 <template>
 	<!-- 最外层背景 -->
-	<view class="content" :style="{ backgroundImage: 'url(' + imageURL + ')' }">
+	<view class="content" :style="{ backgroundImage: 'url(' + imageURL + ')' }" >
+		<page-head :title="title"></page-head>
 		<!-- 上面中间的头像logo -->
 		<image src="../../static/logo.png" mode="aspectFit" class="logo"></image>
 		<!-- 竖向的大div -->
@@ -16,18 +17,18 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" type="number" placeholder-class="text2" placeholder="请输入手机号" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input name = "shoujihao" @input="shoujihaoChange" class="srk" type="number" placeholder-class="text2" placeholder="请输入手机号" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
 				<!-- 锁的标志 -->
-				<view style="width: 95rpx;">
+				<view style="width: 115rpx;">
 					<image style="width: 40rpx;height: 40rpx; margin-top: 20rpx;margin-left: 30rpx;" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image>
 				</view>
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input name = "mima" @input="mimaChange" class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
 			</view>
 			<!-- 忘记密码短信验证 横向排列的div -->
 			<view class="uni-flex uni-row">
@@ -52,13 +53,18 @@
 
 <script>
 export default {
-	
 	data() {
 		return {
+			/* name:'', */
+			/* 手机号输入框的内容 */
+			shoujihao:'',
+			/* 密码输入框的内容 */
+			mima:'',
+			title: 'toast',
 			checked: true,
 			/* 返回的最外层背景图片路径 */
 			imageURL: '/static/denglu/bg_dl.png',
-			title: 'picker',
+			/* title: 'picker', */
 			array: [{name:'+86'},{name: '+87'}, {name:'+88'}, {name:'+89'}],
 			index: 0
 		};
@@ -66,6 +72,15 @@ export default {
 	methods: {
 		jizhumima(){
 			this.checked = !this.checked
+		},
+		/* 手机号输入框返回的值 */
+		shoujihaoChange:function (e) {
+			this.shoujihao = e.detail.value;
+			getApp().globalData.shoujihao = this.shoujihao;
+		},
+		/* 密码输入框返回的值 */
+		mimaChange:function (e) {
+			this.mima = e.detail.value;
 		},
 		bindPickerChange: function(e) {
 			console.log('picker发送选择改变，携带值为：' + e.target.value)
@@ -82,9 +97,31 @@ export default {
 			})
 		},
 		navigateTo2() {
-			uni.reLaunch({
-				url:'../shouye/shouye'
-			})
+				if (this.shoujihao === '') {
+					uni.showToast({
+						title: "请输入手机号!",
+						icon: 'none',
+					})
+				}else if(this.mima === ''){
+					uni.showToast({
+						title: "请输入密码!",
+						icon: 'none',
+					})
+				}else if(this.shoujihao.length !=11){
+					uni.showToast({
+						title: "手机号必须为11位!",
+						icon: 'none',
+					})
+				}else if(this.mima.length<8){
+					uni.showToast({
+						title: "密码必须大于8位!!",
+						icon: 'none',
+					})
+				}else{
+					uni.reLaunch({
+						url:'../shouye/shouye'
+					})
+				}
 		},
 		navigateTo3() {
 			uni.navigateTo({
