@@ -65,7 +65,8 @@
 	margin-top: 20rpx;
 	color: #89633B;
 	font-size: 35rpx;
-	border-bottom: 1rpx solid #89633B;
+	text-decoration: underline;
+	
 }
 .guize1{
 	background-size: 100% 100%;

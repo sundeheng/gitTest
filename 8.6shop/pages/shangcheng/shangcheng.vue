@@ -3,133 +3,17 @@
 			<scroll-view :scroll-top="scrollTop" scroll-y="true" class="scroll-Y" @scrolltoupper="upper" @scrolltolower="lower"
 			@scroll="scroll">
 		<view id="demo3" class="scroll-view-item  uni-flex uni-row">
-			<view class="ceng6">
-			<view class="ceng4">
+			<view class="ceng6" v-for="(item, index) in list" :key="item.id">
+			<view class="ceng4" v-for="(item, index) in list1" :key="item.id">
 				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
 				<view class="zi2">翡翠手镯</view>
 				<view class="zi3">2000积分</view>
 				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
 				<view class="bt" @tap="modal1">兑换</view>
 				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
+			</view>
 				</view>
 				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				</view>
-			<view class="ceng6">
-			<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				</view>
-			<view class="ceng6">
-			<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				<view class="ceng4">
-				<view class="xiaotu" :style="{ backgroundImage: 'url(' + imageURLX + ')' }"></view>
-				<view class="zi2">翡翠手镯</view>
-				<view class="zi3">2000积分</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
-				<view class="bt" @tap="modal1">兑换</view>
-				</view>
-				</view>
-				</view>
-		</view>
 		</scroll-view>
 	</view>
 </template>
@@ -138,6 +22,8 @@
 	export default {
 			data() {
 				return {
+					list:[{id:1},{id:2},{id:3}],
+					list1:[{id:1},{id:2},{id:3},{id:4},{id:5}],
 					background: ['color1', 'color2', 'color3'],
 					indicatorDots: true,
 					autoplay: true,
