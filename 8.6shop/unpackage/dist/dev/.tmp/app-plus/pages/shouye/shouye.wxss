@@ -1,9 +1,9 @@
 
-.guanggaowei{
+.guanggaowei {
 	background-size: 100% 100%;
 	height: 350rpx;
 }
-.shu{
+.shu {
 	height: 35rpx;
 	width: 7rpx;
 	margin-left: 30rpx;
@@ -11,20 +11,20 @@
 	border-radius: 10rpx;
 	margin-top: 10rpx;
 }
-.jiangpinchi{
+.jiangpinchi {
 	font-size: 30rpx;
 	margin-left: 15rpx;
 }
-.fengexian1{
+.fengexian1 {
 	height: 20rpx;
-	background-color: #F7F7F7;
+	background-color: #f7f7f7;
 }
-.choujiangdatu{
+.choujiangdatu {
 	height: 450rpx;
 	width: 490rpx;
 	background-size: 100% 100%;
 }
-.lijichoujiang{
+.lijichoujiang {
 	height: 245rpx;
 	width: 85rpx;
 	background-size: 100% 100%;
@@ -32,45 +32,51 @@
 	top: 6%;
 	left: 80%;
 }
-.choujiangjilu{
+.choujiangjilu {
 	height: 30rpx;
 	width: 85rpx;
 	position: absolute;
 	top: 1.8%;
 	left: 79%;
 }
-.hengxiang{
+.hengxiang {
 	margin-top: 15rpx;
 	margin-left: 25rpx;
 }
-.biankuang{
+.biankuang {
 	height: 300rpx;
-	border: 5rpx solid #F7F7F7;
+	border: 5rpx solid #f7f7f7;
 	border-radius: 10rpx;
 }
-.xiaotu{
+.xiaotu {
 	height: 165rpx;
 	width: 220rpx;
 	background-size: 100% 100%;
 }
-.zi2{
+.zi2 {
 	font-size: 25rpx;
 	color: #000000;
 	margin-top: 10rpx;
-	text-align: center;/* 居中 */
+	text-align: center; /* 居中 */
 }
-.zi3{
+.zi3 {
 	font-size: 20rpx;
 	color: #896744;
-	text-align: center;/* 居中 */
+	text-align: center; /* 居中 */
 }
-.bt{
+.duihuan {
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.bt {
 	border-radius: 10rpx;
 	padding-left: 20rpx;
 	padding-right: 20rpx;
 	font-size: 20rpx;
 	line-height: 32rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	background-color: #896744;
 }
 .uni-tip {
@@ -89,7 +95,7 @@
 	top: 30%;
 	z-index: 998;
 }
-.zhongjian{
+.zhongjian {
 	width: 410rpx;
 	margin-left: 85rpx;
 	height: 410rpx;
@@ -99,27 +105,35 @@
 	        align-items: center;
 	/* background-color: #000000; */
 }
-.guanbi{
+.guanbi {
 	margin-bottom: 400rpx;
 	margin-left: 30rpx;
 	width: 45rpx;
 	height: 45rpx;
 }
-.zi5{
+.zi5 {
 	font-size: 30rpx;
 	text-align: center;
 	color: #000000;
 }
-.zi6{
+.zi6 {
 	font-size: 25rpx;
 	color: #1c1c1c;
 }
-.bt1{
+.tankuangchoujiangjilu {
+	color: #87572c;
+}
+.tankuangchoujiangdatu {
+	width: 410rpx;
+	height: 230rpx;
+	margin-top: 10rpx;
+}
+.bt1 {
 	text-align: center;
 	width: 178rpx;
 	background-color: #8a5421;
 	border-radius: 10rpx;
 	font-size: 25rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 }
 

@@ -1,5 +1,5 @@
 <template>
-	<view style="background-color: #F7F7F7; height: 1334rpx;">
+	<view class="dimian">
 		<view class="bg" :style="{ backgroundImage: 'url(' + imageURLtx + ')' }"></view>
 		<view class="bg1">
 			<view @tap="togglePopup('center', 'tip')" class="qdbj" :style="{ backgroundImage: 'url(' + imageURL + ')' }"><image class="qd" src="../../static/wode/icon_yqd_wd.png" mode="aspectFit"></image></view>
@@ -25,7 +25,7 @@
 		</view>
 		<button class="dl" @click="tiao3">退出登录</button>
 		<uni-popup :show="show" :type="type" :custom="true" :mask-click="false" @change="change">
-			<view class="uni-flex uni-row" style="-webkit-justify-content: flex-end;justify-content: flex-end;">
+			<view class="uni-flex uni-row tanchukuangchahao" >
 			<view class="cha" @tap="cancel('tip')"><image src="../../static/qiandao/guanbi%201.png" mode="aspectFit" class="cha1"></image><view class="shugang"></view></view>
 			</view>
 			<view class="uni-tip">
@@ -37,7 +37,7 @@
 						<view class="dui" style="margin-left: 460rpx;" v-show="dui3"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 						<view class="dui" style="margin-left: 625rpx;" v-show="dui4"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 					</view>
-					<view class="qiandao7 uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="qiandao7 uni-flex uni-row">
 						<view class="qiandaotu">
 							<view class="qiandaozi">第1天</view>
 							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
@@ -69,7 +69,7 @@
 						<view class="dui" style="margin-left: 375rpx;" v-show="dui6"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 						<view class="dui" style="margin-left: 550rpx;" v-show="dui5"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
 					</view>
-					<view class="qiandao7 uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center;">
+					<view class="qiandao7 uni-flex uni-row">
 						<view class="qiandaotu">
 							<view class="qiandaozi">第7天</view>
 							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
@@ -95,7 +95,7 @@
 						</view> -->
 					</view>
 				</view>
-				<view class="uni-flex uni-row" style="-webkit-justify-content: center;justify-content: center; margin-top: 225rpx;"><view class="qiandao3" @tap="lijiqiandao">立即签到</view></view>
+				<view class="uni-flex uni-row lijiqiandaoanniu"><view class="qiandao3" @tap="lijiqiandao">立即签到</view></view>
 			</view>
 		</uni-popup>
 	</view>
@@ -175,6 +175,9 @@
 </script>
 
 <style>
+	.dimian{
+		background-color: #F7F7F7; height: 1220rpx;
+	}
 .bg {
 	height: 415rpx;
 	background-size: 100% 100%;
@@ -330,6 +333,7 @@
 		margin-top: 30rpx;
 	}
 	.qiandao7{
+		-webkit-justify-content: center;justify-content: center;
 		height: 175rpx;
 		align-items: center;
 	}
@@ -378,11 +382,17 @@
 		color: #d1d5d1;
 		font-size: 20rpx;
 	}
+	.lijiqiandaoanniu{
+		-webkit-justify-content: center;justify-content: center; margin-top: 225rpx;
+	}
 	.dui{
 		position: absolute;
 		width: 30rpx;
 		height: 30rpx;
 		margin-top: 5rpx;
+	}
+	.tanchukuangchahao{
+		-webkit-justify-content: flex-end;justify-content: flex-end;
 	}
 	.cha{
 		width: 40rpx;

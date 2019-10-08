@@ -1,5 +1,9 @@
 
-.tu1{
+.jifentu {
+	width: 650rpx;
+	height: 290rpx;
+}
+.tu1 {
 	margin-top: 20rpx;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
@@ -7,31 +11,43 @@
 	        align-items: center;
 	margin-left: 45rpx;
 }
-.zi1{
+.zi1 {
 	margin-left: 550rpx;
 	margin-right: 65rpx;
 	margin-top: 20rpx;
-	color: #89633B;
+	color: #89633b;
 	font-size: 35rpx;
 	text-decoration: underline;
 }
-.guize1{
+.guizetankuang {
+	-webkit-justify-content: flex-end;
+	-webkit-box-pack: end;
+	    -ms-flex-pack: end;
+	        justify-content: flex-end;
+}
+.guizetu {
+	width: 75rpx;
+	height: 75rpx;
+	margin-bottom: -45rpx;
+	margin-right: -8rpx;
+}
+.guize1 {
 	background-size: 100% 100%;
 	width: 580rpx;
 	height: 500rpx;
 }
-.guanbi{
+.guanbi {
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
 }
-.guize2{
+.guize2 {
 	padding-top: 40rpx;
 	font-size: 35rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 }
-.guize3{
+.guize3 {
 	color: #481b19;
 	font-size: 26rpx;
 	padding-top: 55rpx;

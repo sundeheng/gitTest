@@ -1,4 +1,18 @@
 
+.dimian {
+	background-color: #f7f7f7;
+	height: 1334rpx;
+}
+.cuowutishi {
+	color: #ff0000;
+	height: 40rpx;
+}
+.hengpai {
+	-webkit-justify-content: space-between;
+	-webkit-box-pack: justify;
+	    -ms-flex-pack: justify;
+	        justify-content: space-between;
+}
 .hengxian {
 	width: 550rpx;
 	height: 2rpx;
@@ -24,6 +38,7 @@
 	background-color: #929292;
 }
 .quxiaoNC {
+	-webkit-flex: 1;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;
 	font-size: 35rpx;
 	color: #929292;
 	text-align: center;
@@ -31,6 +46,7 @@
 	padding-bottom: 20rpx;
 }
 .queding {
+	-webkit-flex: 1;-webkit-box-flex: 1;-ms-flex: 1;flex: 1;
 	font-size: 35rpx;
 	color: #896744;
 	text-align: center;
@@ -85,6 +101,10 @@
 	color: #929292;
 }
 .zi4 {
+	-webkit-flex: 1;
+	-webkit-box-flex: 1;
+	    -ms-flex: 1;
+	        flex: 1;
 	font-size: 30rpx;
 	text-align: right;
 	color: #929292;

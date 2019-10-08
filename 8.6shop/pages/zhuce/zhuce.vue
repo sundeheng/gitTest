@@ -1,5 +1,5 @@
 <template>
-<!-- 最外层背景 -->
+	<!-- 最外层背景 -->
 	<view class="content" :style="{ backgroundImage: 'url(' + imageURL + ')' }">
 		<!-- 上面中间的头像logo -->
 		<image src="../../static/logo.png" mode="aspectFit" class="logo"></image>
@@ -9,77 +9,90 @@
 			<view class="ceng2 uni-flex uni-row ">
 				<!-- +86字段 -->
 				<picker @change="bindPickerChange" :value="index" :range="array" range-key="name">
-					<view class="shuzi"><text class="shuzi1">{{array[index].name}}</text></view>
+					<view class="shuzi">
+						<text class="shuzi1">{{ array[index].name }}</text>
+					</view>
 				</picker>
 				<!-- 向下箭头 -->
-				<view class=""><image style="width: 25rpx;height: 25rpx; margin-top: 25rpx;" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
+				<view><image class="xiajiantou" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" type="number" placeholder="请输入手机号登录" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" type="number" placeholder="请输入手机号登录"  /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
-			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
+			<view class="ceng2 uni-flex uni-row mimakuang" >
 				<!-- 锁的标志 -->
-				<view style="width: 95rpx;">
-					<image style="width: 40rpx;height: 40rpx; margin-top: 20rpx;margin-left: 30rpx;" src="../../static/denglu/icon_dx_dl.png" mode="aspectFit"></image>
-				</view>
+				<view class="suokuang"><image class="suo" src="../../static/denglu/icon_dx_dl.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
-				<view class="text">丨</view>
+				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" type="number" placeholder="请输入验证码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" type="number" placeholder="请输入验证码"  /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
-			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
+			<view class="ceng2 uni-flex uni-row mimakuang" >
 				<!-- 锁的标志 -->
-				<view style="width: 95rpx;">
-					<image style="width: 40rpx;height: 40rpx; margin-top: 20rpx;margin-left: 30rpx;" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image>
-				</view>
+				<view class="suokuang"><image class="suo" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
-				<view class="text">丨</view>
+				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" password type="text" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" password type="text" placeholder="请输入密码"  /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
-			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
+			<view class="ceng2 uni-flex uni-row mimakuang" >
 				<!-- 锁的标志 -->
-				<view style="width: 95rpx;">
-					<image style="width: 40rpx;height: 40rpx; margin-top: 20rpx;margin-left: 30rpx;" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image>
-				</view>
+				<view class="suokuang"><image class="suo" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
-				<view class="text">丨</view>
+				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" password type="text" placeholder="请再次输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp"><input class="srk" password type="text" placeholder="请再次输入密码" /></view>
 			</view>
 			<!-- 登录按钮 -->
-			<button type="primary" class="bt1" >注册</button>
+			<button type="primary" class="bt1" style="background-color: #8a5421;">注册</button>
 		</view>
 	</view>
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				imageURL: '/static/denglu/bg_dl.png',
-				title: 'picker',
-				array: [{name:'+86'},{name: '+87'}, {name:'+88'}, {name:'+89'}],
-				index: 0
-			}
-		},
-		methods: {
-			bindPickerChange: function(e) {
-				console.log('picker发送选择改变，携带值为：' + e.target.value)
-				this.index = e.target.value
-			}
+export default {
+	data() {
+		return {
+			imageURL: '/static/denglu/bg_dl.png',
+			title: 'picker',
+			array: [{ name: '+86' }, { name: '+87' }, { name: '+88' }, { name: '+89' }],
+			index: 0
+		};
+	},
+	methods: {
+		bindPickerChange: function(e) {
+			console.log('picker发送选择改变，携带值为：' + e.target.value);
+			this.index = e.target.value;
 		}
 	}
+};
 </script>
 
 <style>
+	.srk{
+		background-color:#515151 ;
+		color: #FFFFFF;
+	}
+	.suokuang {
+		width: 95rpx;
+	}
+	.suo {
+		width: 40rpx;
+		height: 40rpx;
+		margin-top: 20rpx;
+		margin-left: 30rpx;
+	}
+	.mimakuang {
+		margin-top: 20rpx;
+	}
+	
 .content {
 	width: 750rpx;
-	height: 1334rpx;
+	height: 1197rpx;
 	background-size: 100% 100%;
 }
 .logo {
@@ -101,38 +114,49 @@
 	border-radius: 10rpx;
 	align-items: center;
 }
+.xiajiantou {
+	width: 25rpx;
+	height: 25rpx;
+	margin-top: 25rpx;
+}
 .text {
 	margin: 15upx 10upx;
 	text-align: center;
 	color: #ffffff;
 	font-size: 26upx;
 }
+.text0 {
+	margin: 15upx 10upx;
+	text-align: center;
+	color: #ffffff;
+	font-size: 26upx;
+	padding-left: 25rpx;
+}
 .text1 {
 	text-align: left;
 	color: #ffffff;
 	font-size: 26upx;
 }
-.uni-input{
+.uni-input {
 	color: #ffffff;
 }
 .bt1 {
 	border-radius: 10rpx;
 	height: 80rpx;
 	font-size: 32rpx;
-	background-color: #8a5421;
 	margin-top: 65rpx;
 }
-.shuzi{
+.shuzi {
 	width: 70rpx;
 	align-items: center;
 	text-align: right;
-/* 	padding-left: 20rpx;
+	/* 	padding-left: 20rpx;
 	padding-top: 20rpx; */
 	background-color: #515151;
 	border-radius: 10rpx;
 }
-.shuzi1{
-	color: #FFFFFF;
-	font-size:25upx;
+.shuzi1 {
+	color: #ffffff;
+	font-size: 25upx;
 }
 </style>

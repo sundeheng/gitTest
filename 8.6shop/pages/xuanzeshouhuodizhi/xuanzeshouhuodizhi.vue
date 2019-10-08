@@ -1,23 +1,23 @@
 <template>
-	<view style="background-color: #F7F7F7; height: 1334rpx;">
-		<view class="di1">
+	<view class="dimian">
+		<view class="di1" v-for="(item, index) in arrayList" :key="index">
 			<view class="hang1 uni-flex uni-row">
-				<text class="zi1">刘夏</text>
-				<text class="zi2">12345678910</text>
+				<text class="zi1">{{ item.xingming }}</text>
+				<text class="zi2">{{item.dianhua}}</text>
 			</view>
-			<text class="zi3">江苏省徐州市铜山区北京路111号</text>
+			<text class="zi3">{{ item.xiangxidizhi }}</text>
 			<view class="hang2"></view>
 			<view class="hang3 uni-flex uni-row">
-				<radio class="tu1" value="r2" :checked="check0" color="#896744" style="transform:scale(0.7); margin-top: -15rpx;" @tap="jizhumima"/>
-				<text class="zi4" @tap="jizhumima">默认地址</text>
-				<image style="margin-left: 300rpx;" class="tu1" src="../../static/xuanzeshouhuodizhi/icon_bj_shdz.png" mode="aspectFit"></image>
+				<radio class="tu1 r2" value="r2" :checked="item.moren" color="#896744" @tap="jizhumima(index)" />
+				<text class="zi4 " @tap="jizhumima(index)">默认地址</text>
+				<image class="tu1 bianji" src="../../static/xuanzeshouhuodizhi/icon_bj_shdz.png" mode="aspectFit"></image>
 				<text class="zi4">编辑</text>
-				<image style="margin-left: 20rpx;" class="tu1" src="../../static/xuanzeshouhuodizhi/icon_sc_shdz.png" mode="aspectFit"></image>
-				<text class="zi4">删除</text>
+				<image class="tu1 shanchu" src="../../static/xuanzeshouhuodizhi/icon_sc_shdz.png" @click="shanchu(index)" mode="aspectFit"></image>
+				<text class="zi4" @click="shanchu(index)">删除</text>
 			</view>
 		</view>
 
-		<view class="di1" style="margin-top: 20rpx;">
+		<!-- 		<view class="di1" style="margin-top: 20rpx;">
 			<view class="hang1 uni-flex uni-row">
 				<text class="zi1">刘夏</text>
 				<text class="zi2">12345678910</text>
@@ -25,14 +25,14 @@
 			<text class="zi3">江苏省徐州市铜山区北京路111号</text>
 			<view class="hang2"></view>
 			<view class="hang3 uni-flex uni-row">
-				<radio class="tu1"  value="r2" :checked="check1" color="#896744" style="transform:scale(0.7);margin-top: -15rpx;" @tap="jizhumima1"/>
+				<radio class="tu1 r2" value="r2" :checked="check1" color="#896744" @tap="jizhumima1" />
 				<text class="zi4" @tap="jizhumima1">默认地址</text>
-				<image style="margin-left: 300rpx;" class="tu1" src="../../static/xuanzeshouhuodizhi/icon_bj_shdz.png" mode="aspectFit"></image>
+				<image  class="tu1 bianji" src="../../static/xuanzeshouhuodizhi/icon_bj_shdz.png" mode="aspectFit"></image>
 				<text class="zi4">编辑</text>
-				<image style="margin-left: 20rpx;" class="tu1" src="../../static/xuanzeshouhuodizhi/icon_sc_shdz.png" mode="aspectFit"></image>
+				<image  class="tu1 shanchu" src="../../static/xuanzeshouhuodizhi/icon_sc_shdz.png" mode="aspectFit"></image>
 				<text class="zi4">删除</text>
 			</view>
-		</view>
+		</view> -->
 	</view>
 </template>
 
@@ -42,6 +42,21 @@ export default {
 		return {
 			check0: true,
 			check1: false,
+			jihe: {xingming:'',dianhua:'',xiangxidizhi:'',moren:false},
+			arrayList: [
+				{
+					xingming: '张三',
+					dianhua: '12345678910',
+					xiangxidizhi: 'XX省XX市XX区XX镇XX村XX号',
+					moren: true
+				},
+				{
+					xingming: '张三',
+					dianhua: '12345678910',
+					xiangxidizhi: 'XX省XX市XX区XX镇XX村XX号',
+					moren: false
+				}
+			]
 		};
 	},
 	onNavigationBarButtonTap(e) {
@@ -50,29 +65,44 @@ export default {
 		});
 	},
 	methods: {
-	jizhumima() {
-		if((this.check1 == false)&& (this.check0 == true)){
-			this.check1 = false;
-			this.check0 = true;
-		}else if((this.check0 == false)&& (this.check1 == true)) {
-			this.check1 = false;
-			this.check0 = true;
+		shanchu(index){
+			this.arrayList.splice(index, 1);
+		},
+		jizhumima(index) {
+			for (let i = 0; i < this.arrayList.length; i++) {
+				this.arrayList[i].moren = false;
+			}
+			this.arrayList[index].moren = true;
 		}
 	},
-	jizhumima1() {
-		if((this.check0 == false)&&(this.check1 == true)){
-			this.check0 = false;
-			this.check1 = true;
-		}else if((this.check1 == false)&&(this.check0 == true)) {
-			this.check0 = false;
-			this.check1 = true;
-		}
-	}
+	onLoad() {
+			if (getApp().globalData.shouhuorenmingcheng != '') {
+				this.jihe.xingming = getApp().globalData.shouhuorenmingcheng;
+				this.jihe.dianhua = getApp().globalData.shouhuorenshoujihao;
+				this.jihe.xiangxidizhi = getApp().globalData.shouhuorenxiangxidizhi;
+				this.jihe.moren = getApp().globalData.shouhuorenmoren;
+				this.arrayList.push(this.jihe);
+				if (getApp().globalData.shouhuorenmoren) {
+					for (let i = 0; i < this.arrayList.length-1; i++) {
+						this.arrayList[i].moren = false;
+					}
+				}
+			}
+			/* this.arrayList.push(this.jihe);
+			if (this.jihe.moren) {
+				for (let i = 0; i < this.arrayList.length; i++) {
+					this.arrayList[i].moren = false;
+				}
+			} */
 	}
 };
 </script>
 
 <style>
+.dimian {
+	background-color: #f7f7f7;
+	height: 1197rpx;
+}
 .di1 {
 	height: 205rpx;
 	background-color: #ffffff;
@@ -111,6 +141,16 @@ export default {
 .tu1 {
 	width: 35rpx;
 	height: 35rpx;
+}
+.bianji {
+	margin-left: 300rpx;
+}
+.shanchu {
+	margin-left: 20rpx;
+}
+.r2 {
+	transform: scale(0.7);
+	margin-top: -15rpx;
 }
 .zi4 {
 	margin-left: 15rpx;

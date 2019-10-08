@@ -14,4 +14,20 @@
 	background-color: #FFFFFF;
 	border-radius: 10rpx;
 }
+.shijianzi{
+	font-size: 25rpx; 
+	color: #989898;
+}
+.jifenzi{
+	font-size: 25rpx; 
+	color: #896477;
+	margin-left: 310rpx;
+}
+.jiangpinzi{
+	font-size: 28rpx; 
+	color: #000000;
+}
+.lingquanniu{
+	margin-left: 360rpx;
+}
 

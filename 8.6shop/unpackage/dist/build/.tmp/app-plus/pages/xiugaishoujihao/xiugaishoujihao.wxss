@@ -1,17 +1,41 @@
 
-.srk{
-		margin-top: 12rpx;
-		color: #1C1C1C;
+.srk {
+	margin-top: 12rpx;
+	color: #1c1c1c;
 }
 .content {
-		width: 750rpx;
-		height: 1334rpx;
-		background-color: #e5e5e5;
+	width: 750rpx;
+	height: 1334rpx;
+	background-color: #e5e5e5;
+}
+.suokuang {
+	width: 95rpx;
+}
+.suo2 {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 20rpx;
+	margin-left: 30rpx;
+}
+.chahao {
+	width: 30rpx;
+	height: 30rpx;
+	margin-top: 20rpx;
+	position: absolute;
+}
+.suo {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 20rpx;
+	margin-left: 30rpx;
 }
 .ceng2 {
 	height: 80rpx;
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	border-radius: 10rpx;
+}
+.mimakuang {
+	margin-top: 20rpx;
 }
 .text {
 	margin: 15rpx 10rpx;
@@ -20,17 +44,16 @@
 	font-size: 26rpx;
 }
 .inp {
-	background-color: #FFFFFF;
+	background-color: #ffffff;
 	color: #e5e5e5;
 	font-size: 26rpx;
 }
-.bt{
+.bt {
 	height: 40rpx;
 	margin-top: 20rpx;
-	margin-left: -125rpx;
 	position: absolute;
 	color: #896744;
-	font-size: 25rpx; 
+	font-size: 25rpx;
 	border: 3rpx solid #896744;
 	border-radius: 10rpx;
 }
@@ -40,7 +63,7 @@
 	height: 80rpx;
 	font-size: 35rpx;
 	padding-top: 10rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	background-color: #8a5421;
 	margin-top: 273rpx;
 	margin-left: 30rpx;

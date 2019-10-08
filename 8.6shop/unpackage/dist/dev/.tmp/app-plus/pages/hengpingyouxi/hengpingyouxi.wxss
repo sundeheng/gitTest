@@ -692,6 +692,64 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 大背景 */
 .content1 {
 	width: 1334rpx;
@@ -736,6 +794,14 @@
 	border-radius: 150rpx;
 	border: 4rpx solid #af9788;
 }
+/* 玩家昵称 */
+.nicheng {
+	position: absolute;
+	color: #ffffff;
+	font-size: 30rpx;
+	margin-left: 20rpx;
+	margin-top: 20rpx;
+}
 /* 头部金币 */
 .toubujifen {
 	margin-left: 460rpx;
@@ -746,6 +812,11 @@
 	border: 4rpx solid #af9788;
 	position: absolute;
 	background: rgba(0, 0, 0, 0.3);
+}
+/* 金币的图标 */
+.jifenbiaozhi {
+	width: 50rpx;
+	height: 50rpx;
 }
 /* 金币字 */
 .jifen {
@@ -794,6 +865,8 @@
 	/* border: 4rpx solid #af9788; */
 	background: rgba(0, 0, 0, 0.3);
 	margin-left: 40rpx;
+	position: absolute;
+	margin-left: 725rpx;
 }
 /* 电脑头像图 */
 .AItouxiangtu {
@@ -843,8 +916,9 @@
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
-	margin-left: 35rpx;
 	margin-top: 40rpx;
+	position: absolute;
+	margin-left: 600rpx;
 	/*	margin-top: 40rpx; */
 }
 /* 卡牌数量字 */
@@ -895,6 +969,8 @@
 }
 .jiaofen1 {
 	margin-left: 80rpx;
+	position: absolute;
+	margin-left: 400rpx;
 }
 /* 电脑下面的倍数 */
 .fenshu1 {
@@ -972,6 +1048,20 @@
 /* 卡牌栏 */
 .kapailan {
 	z-index: 995;
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+.kapailan1 {
+	position: absolute;
+	z-index: 995;
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+	margin-left: 480rpx;
+	margin-top: -70rpx;
 }
 /* 卡牌 */
 .kapai {
@@ -981,14 +1071,10 @@
 	position: absolute;
 	background-size: 100% 100%;
 }
-.kapai1 {
-	/* z-index: 995; */
-	width: 130rpx;
-	height: 185rpx;
-	position: absolute;
-	background-size: 100% 100%;
+.kapai2 {
+	margin-top: -20rpx;
 }
-.kapai11{
+.kapai11 {
 	position: absolute;
 }
 /* AI出的牌 */
@@ -1015,6 +1101,12 @@
 	left: 20%;
 	top: 15%;
 	z-index: 998;
+}
+/* 胜负弹出框背景 */
+.shengfubeijing {
+	background: rgba(21, 19, 19, 0.82);
+	width: 1334rpx;
+	height: 750rpx;
 }
 /* 胜负的弹出框 */
 .tanchukuangshengfu {
@@ -1079,6 +1171,19 @@
 .wenben {
 	color: #8c6348;
 }
+.duizhanshijian {
+	margin-left: 40rpx;
+}
+.zhankuang {
+	margin-left: 165rpx;
+}
+.duizhanjinbi {
+	margin-left: 190rpx;
+}
+/* 战绩滑动条高度 */
+.zhanjibiao {
+	height: 280rpx;
+}
 /* 战绩的加减金币 */
 .jinbi {
 	margin-left: 200rpx;
@@ -1131,6 +1236,24 @@
 .jieshubiaoti {
 	color: #dbdbdb;
 }
+.shengfubiaotinicheng {
+	margin-left: 40rpx;
+}
+.shengfubiaotidifen {
+	margin-left: 120rpx;
+}
+.shengfubiaotibeishu {
+	margin-left: 115rpx;
+}
+.shengfumingcheng {
+	margin-left: 40rpx;
+}
+.shengfudifen {
+	margin-left: 130rpx;
+}
+.shengfubeishu {
+	margin-left: 140rpx;
+}
 /*  */
 .jieshubiaoti1 {
 	color: #f7cf09;
@@ -1150,12 +1273,12 @@
 	margin-left: 30rpx;
 }
 /* 设置音效的字体 */
-.shezhiziti{
+.shezhiziti {
 	font-size: 35rpx;
-	color: #1C1C1C;
+	color: #1c1c1c;
 }
 /* 音乐音效按钮 */
-.yinyuetubiao{
+.yinyuetubiao {
 	background-size: 100% 100%;
 	height: 65rpx;
 	width: 60rpx;
@@ -1194,7 +1317,7 @@
 	margin-top: -70rpx;
 }
 /* 出牌的要不起按钮 */
-.yaobuqianniu2{
+.yaobuqianniu2 {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;
@@ -1202,7 +1325,7 @@
 	margin-left: 115rpx;
 }
 /* 出牌 */
-.chupaianniu{
+.chupaianniu {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;
@@ -1210,7 +1333,7 @@
 	margin-left: 65rpx;
 }
 /* 提示 */
-.tishianniu{
+.tishianniu {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;

@@ -1,7 +1,23 @@
 
+.srk{
+		background-color:#515151 ;
+		color: #FFFFFF;
+}
+.suokuang {
+		width: 95rpx;
+}
+.suo {
+		width: 40rpx;
+		height: 40rpx;
+		margin-top: 20rpx;
+		margin-left: 30rpx;
+}
+.mimakuang {
+		margin-top: 20rpx;
+}
 .content {
 	width: 750rpx;
-	height: 1334rpx;
+	height: 1197rpx;
 	background-size: 100% 100%;
 }
 .logo {
@@ -26,41 +42,52 @@
 	    -ms-flex-align: center;
 	        align-items: center;
 }
+.xiajiantou {
+	width: 25rpx;
+	height: 25rpx;
+	margin-top: 25rpx;
+}
 .text {
 	margin: 15rpx 10rpx;
 	text-align: center;
 	color: #ffffff;
 	font-size: 26rpx;
 }
+.text0 {
+	margin: 15rpx 10rpx;
+	text-align: center;
+	color: #ffffff;
+	font-size: 26rpx;
+	padding-left: 25rpx;
+}
 .text1 {
 	text-align: left;
 	color: #ffffff;
 	font-size: 26rpx;
 }
-.uni-input{
+.uni-input {
 	color: #ffffff;
 }
 .bt1 {
 	border-radius: 10rpx;
 	height: 80rpx;
 	font-size: 32rpx;
-	background-color: #8a5421;
 	margin-top: 65rpx;
 }
-.shuzi{
+.shuzi {
 	width: 70rpx;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
 	text-align: right;
-/* 	padding-left: 20rpx;
+	/* 	padding-left: 20rpx;
 	padding-top: 20rpx; */
 	background-color: #515151;
 	border-radius: 10rpx;
 }
-.shuzi1{
-	color: #FFFFFF;
-	font-size:25rpx;
+.shuzi1 {
+	color: #ffffff;
+	font-size: 25rpx;
 }
 

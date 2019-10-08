@@ -1,5 +1,5 @@
 <template>
-	<view style="background-color: #F7F7F7; height: 1334rpx;">
+	<view class="dimian">
 		<view class="hang"></view>
 		<view class="hang1 uni-flex uni-row">
 			<text class="zi1">头像</text>
@@ -8,12 +8,12 @@
 		</view>
 		<view class="hang2 uni-flex uni-row">
 			<text class="zi2">手机号</text>
-			<view class="zi4" style="-webkit-flex: 1;flex: 1;" @tap="xiugaisjh">{{ shoujihao }}</view>
+			<view class="zi4" @tap="xiugaisjh">{{ shoujihao }}</view>
 			<image class="yjt" src="../../static/wode/youjiantou4.png" mode="aspectFit"></image>
 		</view>
 		<view class="hang2 uni-flex uni-row" style="-webkit-justify-content: space-between;justify-content: space-between;">
 			<text class="zi2">昵称</text>
-			<view class="zi4" style="-webkit-flex: 1;flex: 1;" @tap="togglePopup('center', 'tip')">{{ nicheng }}</view>
+			<view class="zi4" @tap="togglePopup('center', 'tip')">{{ nicheng }}</view>
 			<image class="yjt" src="../../static/wode/youjiantou4.png" mode="aspectFit"></image>
 		</view>
 		<uni-popup ref="dibu" :custom="true" :type="type" @change="change">
@@ -25,12 +25,12 @@
 				<view class="xiugainicheng">修改昵称</view>
 				<input type="text" class="shurukuang" placeholder="请输入昵称" @input="onKeyInput" />
 				<view class="hengxian"></view>
-				<view style="color: #FF0000; height: 40rpx;">{{ cuowutishi }}</view>
+				<view class="cuowutishi">{{ cuowutishi }}</view>
 				<view class="hengxian1"></view>
-				<view class="hengpai uni-flex uni-row" style="-webkit-justify-content: space-between;justify-content: space-between;">
-					<view class="quxiaoNC" style="-webkit-flex: 1;flex: 1;" @click="quxiao1">取消</view>
+				<view class="hengpai uni-flex uni-row">
+					<view class="quxiaoNC" @click="quxiao1">取消</view>
 					<view class="shuxian"></view>
-					<view class="queding" style="-webkit-flex: 1;flex: 1;" @click="queding1">确定</view>
+					<view class="queding"  @click="queding1">确定</view>
 				</view>
 			</view>
 		</uni-popup>
@@ -56,12 +56,12 @@ export default {
 	},
 	methods: {
 		queding1() {
-/* 			if ((this.nicheng1.length <= 1) || (this.nicheng1.length >= 3)) {
+			/* 			if ((this.nicheng1.length <= 1) || (this.nicheng1.length >= 3)) {
 				this.cuowutishi = '昵称必须2-4位!';
 			} else { */
-				this.nicheng = getApp().globalData.nicheng;
-				this.show = !this.show;
-/* 			} */
+			this.nicheng = getApp().globalData.nicheng;
+			this.show = !this.show;
+			/* 			} */
 		},
 		quxiao1() {
 			this.show = !this.show;
@@ -116,6 +116,18 @@ export default {
 </script>
 
 <style>
+.dimian {
+	background-color: #f7f7f7;
+	height: 1197rpx;
+}
+.cuowutishi {
+	color: #ff0000;
+	height: 40rpx;
+}
+.hengpai {
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
 .hengxian {
 	width: 550rpx;
 	height: 2rpx;
@@ -141,6 +153,7 @@ export default {
 	background-color: #929292;
 }
 .quxiaoNC {
+	-webkit-flex: 1;flex: 1;
 	font-size: 35rpx;
 	color: #929292;
 	text-align: center;
@@ -148,6 +161,7 @@ export default {
 	padding-bottom: 20rpx;
 }
 .queding {
+	-webkit-flex: 1;flex: 1;
 	font-size: 35rpx;
 	color: #896744;
 	text-align: center;
@@ -196,6 +210,8 @@ export default {
 	color: #929292;
 }
 .zi4 {
+	-webkit-flex: 1;
+	flex: 1;
 	font-size: 30rpx;
 	text-align: right;
 	color: #929292;

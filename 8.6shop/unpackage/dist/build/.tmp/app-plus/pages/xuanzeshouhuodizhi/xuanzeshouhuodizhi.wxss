@@ -1,4 +1,8 @@
 
+.dimian {
+	background-color: #f7f7f7;
+	height: 1334rpx;
+}
 .di1 {
 	height: 205rpx;
 	background-color: #ffffff;
@@ -40,6 +44,18 @@
 .tu1 {
 	width: 35rpx;
 	height: 35rpx;
+}
+.bianji {
+	margin-left: 300rpx;
+}
+.shanchu {
+	margin-left: 20rpx;
+}
+.r2 {
+	-webkit-transform: scale(0.7);
+	    -ms-transform: scale(0.7);
+	        transform: scale(0.7);
+	margin-top: -15rpx;
 }
 .zi4 {
 	margin-left: 15rpx;

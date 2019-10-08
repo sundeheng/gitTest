@@ -1,14 +1,26 @@
 
+.dimian{
+		background-color: #F7F7F7; height: 1334rpx;
+}
 .hang1{
 		background-color: #FFFFFF;
 }
 .hang3{
+	padding-left: 20rpx;
 	height: 80rpx;
 	-webkit-box-align: center;
 	-webkit-align-items: center;
 	    -ms-flex-align: center;
 	        align-items: center;
 	background-color: #FFFFFF;
+}
+.morendizhi{
+	margin-top: 20rpx;
+}
+.duihao{
+	-webkit-transform: scale(0.8);
+	    -ms-transform: scale(0.8);
+	        transform: scale(0.8);margin-left: 430rpx;
 }
 .hang2{
 	height: 3rpx;
@@ -30,15 +42,19 @@
 .zi1{
 		font-size: 28rpx;
 		color: #000000;
+		text-align: left;
 }
 .kuang1{
 		font-size: 25rpx;
 		color: #929292;
 }
 .kuang{
-		margin-left: 50rpx;
+		margin-left: 30rpx;
 		font-size: 28rpx;
 		color: #1C1C1C;
+}
+.xiala{
+		font-size: 25rpx;width: 480rpx;
 }
 .yjt1{
 		width: 35rpx;

@@ -4,10 +4,10 @@
 			<view class="content3 uni-flex uni-row">
 				<!-- 玩家左上角的头像-点击可弹出计分板 -->
 				<view @tap="tanchucengJFBBT"><image src="../../static/hengpingyouxi/wanjiatouxiang.jpg" mode="aspectFit" class="touxiang"></image></view>
-				<view style="position: absolute; color: #FFFFFF;font-size: 30rpx;margin-left: 20rpx;margin-top: 20rpx;">{{ nicheng }}</view>
+				<view class="nicheng">{{ nicheng }}</view>
 				<!-- 顶部中间的金币 -->
 				<view class="toubujifen uni-flex uni-row">
-					<image src="../../static/hengpingyouxi/icon_jb_yx.png" mode="aspectFit" style="width: 50rpx;height: 50rpx;"></image>
+					<image class="jifenbiaozhi" src="../../static/hengpingyouxi/icon_jb_yx.png" mode="aspectFit"></image>
 					<view class="jifen">{{ jifen }}</view>
 				</view>
 				<!-- 右上角菜单键 -->
@@ -38,11 +38,11 @@
 						<view class="pai" :style="{ backgroundImage: 'url(' + imageURLPK20 + ')' }"></view>
 						<view class="pai" style="margin-left: 30rpx;" :style="{ backgroundImage: 'url(' + imageURLPK20 + ')' }"></view>
 					</view> -->
-					<view class="dipai uni-flex uni-row">
+					<!-- <view class="dipai uni-flex uni-row">
 						<view class="dipai1" :style="{ backgroundImage: 'url(' + imageURLKPBJ + ')' }"></view>
 						<view class="dipai2" :style="{ backgroundImage: 'url(' + imageURLKPBJ + ')' }"></view>
 						<view class="dipai3" :style="{ backgroundImage: 'url(' + imageURLKPBJ + ')' }"></view>
-					</view>
+					</view> -->
 					<view class="jiaofen1"><view class="AIjiaofen" :style="{ backgroundImage: 'url(' + imageURLAIJF1 + ')' }"></view></view>
 					<view class="AIkapai1" :style="{ backgroundImage: 'url(' + imageURLKPBJ + ')' }">
 						<view class="kapaishuliang">{{ kapaishuliang }}</view>
@@ -104,22 +104,30 @@
 						<view class="daojishi">{{ daojishi }}</view>
 					</view>
 					<view class="bujiabei" @tap="tapqiangdizhu" v-show="showqianganniu" :style="{ backgroundImage: 'url(' + imageURLQDZ + ')' }"></view> -->
-					<!-- 玩家叫抢不抢以后的字 -->
-<!-- 					<view class="jiabeizi" v-show="showbuqiang" :style="{ backgroundImage: 'url(' + imageURLBQ + ')' }"></view>
+				<!-- 玩家叫抢不抢以后的字 -->
+				<!-- 					<view class="jiabeizi" v-show="showbuqiang" :style="{ backgroundImage: 'url(' + imageURLBQ + ')' }"></view>
 					<view class="jiabeizi" v-show="showqiangdizhu" :style="{ backgroundImage: 'url(' + imageURLQDZz + ')' }"></view>
 				</view> -->
-				
+
 				<!-- 玩家操作-出牌不出提示 -->
 				<view class="WJjiaofen uni-flex uni-row">
-					<view class="zhongbiao1"  v-show="showyaobuqianniu1" :style="{ backgroundImage: 'url(' + imageURLZB + ')' }">
+					<view class="kapailan1 uni-flex uni-row">
+							<view
+								v-for="(item, index) in listchupai" :key="index"
+								class="pai"
+								v-show="chukapai"
+								:style="{ backgroundImage: 'url(' + item.pukepai + ')' , marginLeft: 30 * (index + 1) + 'rpx' }"
+							></view>
+					</view>
+					<view class="zhongbiao1" v-show="showyaobuqianniu1" :style="{ backgroundImage: 'url(' + imageURLZB + ')' }">
 						<view class="daojishi">{{ daojishi }}</view>
 					</view>
 					<view class="dizhu" :style="{ backgroundImage: 'url(' + imageURLDZ + ')' }"></view>
 					<view class="yaobuqianniu2" @tap="tapyaobuqi1" v-show="showyaobuqianniu1" :style="{ backgroundImage: 'url(' + imageURLBC + ')' }"></view>
-					<view class="tishianniu" @tap="taptishi" v-show="showtishianniu"  :style="{ backgroundImage: 'url(' + imageURLTS + ')' }"></view>
-					<view class="chupaianniu" @tap="tapchupai" v-show="showchupaianniu"  :style="{ backgroundImage: 'url(' + imageURLCP + ')' }"></view>
-				<!-- 玩家叫加倍以后的字 -->
-				<view class="yaobuqizi"  v-show="showyaobuqizi" :style="{ backgroundImage: 'url(' + imageURLYBQZ + ')' }"></view>
+					<view class="tishianniu" @tap="taptishi" v-show="showtishianniu" :style="{ backgroundImage: 'url(' + imageURLTS + ')' }"></view>
+					<view class="chupaianniu" @tap="tapchupai" v-show="showchupaianniu" :style="{ backgroundImage: 'url(' + imageURLCP + ')' }"></view>
+					<!-- 玩家叫加倍以后的字 -->
+					<view class="yaobuqizi" v-show="showyaobuqizi" :style="{ backgroundImage: 'url(' + imageURLYBQZ + ')' }"></view>
 				</view>
 				<!-- 玩家的卡牌 -->
 				<view class="WJkapai uni-flex uni-row">
@@ -127,12 +135,17 @@
 						<image src="../../static/hengpingyouxi/wanjiatouxiang.jpg" mode="aspectFit" class="touxiang1"></image>
 						<view class="AImingcheng">{{ nicheng }}</view>
 					</view>
-					<view class="wanjiajiabei" :style="{ backgroundImage: 'url(' + imageURLWJJB + ')' }" ></view>
-					<view class="kapailan uni-flex uni-row"> <!-- margin-top: -25rpx; -->
-					<view v-for="(item, index) in list" :key="item.ml" class="kapai11" :style="{ marginLeft:item.ml+'rpx'}">
-						<view class="kapai" @click="tapdikapai(index)" v-show="item.show1" :style="{ backgroundImage: 'url(' + item.pukepai + ')' }"></view>
-						<view class="kapai1" style=" margin-top: -25rpx;" @click="tapdikapai(index)" v-show="item.show2" :style="{ backgroundImage: 'url(' + item.pukepai + ')' }"></view>
-					</view>
+					<view class="wanjiajiabei" :style="{ backgroundImage: 'url(' + imageURLWJJB + ')' }"></view>
+					<view class="kapailan uni-flex uni-row">
+						<!-- margin-top: -25rpx; -->
+						<view v-for="(item, index) in list" :key="index" class="kapai11" :style="{ marginLeft: 45 * (index + 1) + 'rpx' }">
+							<view
+								:class="{ kapai: item.show1, kapai2: item.show2 }"
+								@click="tapdikapai(index)"
+								v-show="item.show1"
+								:style="{ backgroundImage: 'url(' + item.pukepai + ')' }"
+							></view>
+						</view>
 					</view>
 				</view>
 			</view>
@@ -143,19 +156,13 @@
 				<view class="guanbitanchuceng" @tap="tanchucengguanbi" :style="{ backgroundImage: 'url(' + imageURLGBTCC + ')' }"></view>
 				<view class="yinyue uni-flex uni-row" style="position: absolute;margin-top: 70rpx;margin-left: 100rpx;">
 					<view class="shezhiziti">音乐</view>
-					<view class="zuoyouhuadong">
-						<slider activeColor="#1ab341" backgroundColor="#9c8185" block-color="#3b2209" block-size="14" value="60" />
-					</view>
-					<view class="yinyuetubiao" @tap="jinyongYY" :style="{ backgroundImage: 'url(' + imageURLYY + ')' }">
-					</view>
+					<view class="zuoyouhuadong"><slider activeColor="#1ab341" backgroundColor="#9c8185" block-color="#3b2209" block-size="14" value="60" /></view>
+					<view class="yinyuetubiao" @tap="jinyongYY" :style="{ backgroundImage: 'url(' + imageURLYY + ')' }"></view>
 				</view>
 				<view class="yinxiao uni-flex uni-row" style="position: absolute;margin-top: 170rpx;margin-left: 100rpx;">
 					<view class="shezhiziti">音效</view>
-					<view class="zuoyouhuadong">
-						<slider activeColor="#1ab341" backgroundColor="#9c8185" block-color="#3b2209" block-size="14" value="60" />
-					</view>
-					<view class="yinyuetubiao" @tap="jinyongYX" :style="{ backgroundImage: 'url(' + imageURLYX + ')' }">
-					</view>
+					<view class="zuoyouhuadong"><slider activeColor="#1ab341" backgroundColor="#9c8185" block-color="#3b2209" block-size="14" value="60" /></view>
+					<view class="yinyuetubiao" @tap="jinyongYX" :style="{ backgroundImage: 'url(' + imageURLYX + ')' }"></view>
 				</view>
 				<view class="tuichuyouxi" @tap="tuichuyouxi" :style="{ backgroundImage: 'url(' + imageURLTCYX + ')' }"></view>
 			</view>
@@ -167,41 +174,17 @@
 				<view class=" uni-flex uni-row">
 					<view class="zhanji">
 						<view class="zhanjibiaoti uni-flex uni-row" :style="{ backgroundImage: 'url(' + imageURLZJBT + ')' }">
-							<view class="wenben" style="margin-left: 40rpx;">对战时间</view>
-							<view class="wenben" style="margin-left: 165rpx;">战况</view>
-							<view class="wenben" style="margin-left: 190rpx;">金币</view>
+							<view class="wenben duizhanshijian">对战时间</view>
+							<view class="wenben zhankuang">战况</view>
+							<view class="wenben duizhanjinbi">金币</view>
 						</view>
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjisheng">胜</view>
-							<view class="wenben jinbi">+500</view>
-						</view>
-
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjifu">负</view>
-							<view class="wenben jinbi">-250</view>
-						</view>
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjisheng">胜</view>
-							<view class="wenben jinbi">+500</view>
-						</view>
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjifu">负</view>
-							<view class="wenben jinbi">-500</view>
-						</view>
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjisheng">胜</view>
-							<view class="wenben jinbi">+500</view>
-						</view>
-						<view class="zhanjiliebiao uni-flex uni-row">
-							<view class="wenben">2019-10-04</view>
-							<view class="zhanjisheng">胜</view>
-							<view class="wenben jinbi">+500</view>
-						</view>
+						<scroll-view scroll-y="true" class="zhanjibiao">
+							<view :key="index" class="zhanjiliebiao uni-flex uni-row" v-for="(item, index) in zhanji">
+								<view class="wenben">{{ item.shijian }}</view>
+								<view :class="item.yangshi">{{ item.shengfu }}</view>
+								<view class="wenben jinbi">{{ item.fenshu }}</view>
+							</view>
+						</scroll-view>
 					</view>
 					<view class="huadongtiao" :style="{ backgroundImage: 'url(' + imageURLZJHDT + ')' }"></view>
 				</view>
@@ -209,40 +192,40 @@
 		</view>
 		<!-- 胜弹出层 -->
 		<view class="tanchukuangshengfu" v-if="tanchucengS">
-			<view class="" style="	background: rgba(21,19,19,0.82); width: 1334rpx; height: 750rpx;">
+			<view class="shengfubeijing">
 				<view class="shenglibeijing" :style="{ backgroundImage: 'url(' + imageURLSL + ')' }">
 					<view class="guanbishengfu" @tap="tanchucengguanbi"></view>
 					<!-- 胜负战绩 -->
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 270rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti" style="margin-left: 40rpx;">昵称</view>
-						<view class="jieshubiaoti" style="margin-left: 120rpx;">底分</view>
-						<view class="jieshubiaoti" style="margin-left: 115rpx;">倍数</view>
-						<view class="jieshubiaoti" style="margin-left: 120rpx;">得分</view>
+						<view class="jieshubiaoti shengfubiaotinicheng">昵称</view>
+						<view class="jieshubiaoti shengfubiaotidifen">底分</view>
+						<view class="jieshubiaoti shengfubiaotibeishu">倍数</view>
+						<view class="jieshubiaoti shengfubiaotidifen">得分</view>
 					</view>
 					<view class="fengexian" style="margin-top: 320rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 330rpx;">
 						<view class="dizhumao" :style="{ backgroundImage: 'url(' + imageURLDZM + ')' }"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">张三</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X6</view>
-						<view class="jieshubiaotijia" style="margin-left: 130rpx;">+300</view>
+						<view class="jieshubiaoti1 shengfumingcheng">张三</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X6</view>
+						<view class="jieshubiaotijia shengfudifen">+300</view>
 					</view>
 					<view class="fengexian" style="margin-top: 380rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 390rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">李四</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X2</view>
-						<view class="jieshubiaotijian" style="margin-left: 130rpx;">-150</view>
+						<view class="jieshubiaoti1 shengfumingcheng">李四</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X2</view>
+						<view class="jieshubiaotijian shengfudifen">-150</view>
 					</view>
 					<view class="fengexian" style="margin-top: 440rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 450rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">王五</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X3</view>
-						<view class="jieshubiaotijian" style="margin-left: 130rpx;">-150</view>
+						<view class="jieshubiaoti1 shengfumingcheng">王五</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X3</view>
+						<view class="jieshubiaotijian shengfudifen">-150</view>
 					</view>
 					<view class="zailaiyiju" @tap="zailaiyiju" :style="{ backgroundImage: 'url(' + imageURLZLYJ + ')' }"></view>
 				</view>
@@ -250,40 +233,40 @@
 		</view>
 		<!-- 负弹出层 -->
 		<view class="tanchukuangshengfu" v-if="tanchucengF">
-			<view class="" style="	background: rgba(21,19,19,0.82); width: 1334rpx; height: 750rpx;">
+			<view class="shengfubeijing">
 				<view class="shenglibeijing" :style="{ backgroundImage: 'url(' + imageURLSB + ')' }">
 					<view class="guanbishengfu" @tap="tanchucengguanbi"></view>
 					<!-- 胜负战绩 -->
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 270rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti" style="margin-left: 40rpx;">昵称</view>
-						<view class="jieshubiaoti" style="margin-left: 120rpx;">底分</view>
-						<view class="jieshubiaoti" style="margin-left: 115rpx;">倍数</view>
-						<view class="jieshubiaoti" style="margin-left: 120rpx;">得分</view>
+						<view class="jieshubiaoti shengfubiaotinicheng">昵称</view>
+						<view class="jieshubiaoti shengfubiaotidifen">底分</view>
+						<view class="jieshubiaoti shengfubiaotibeishu">倍数</view>
+						<view class="jieshubiaoti shengfubiaotidifen">得分</view>
 					</view>
 					<view class="fengexian" style="margin-top: 320rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 330rpx;">
 						<view class="dizhumao" :style="{ backgroundImage: 'url(' + imageURLDZM + ')' }"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">张三</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X6</view>
-						<view class="jieshubiaotijia" style="margin-left: 130rpx;">-300</view>
+						<view class="jieshubiaoti1 shengfumingcheng">张三</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X6</view>
+						<view class="jieshubiaotijia shengfudifen">+300</view>
 					</view>
 					<view class="fengexian" style="margin-top: 380rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 390rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">李四</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X2</view>
-						<view class="jieshubiaotijian" style="margin-left: 130rpx;">+150</view>
+						<view class="jieshubiaoti1 shengfumingcheng">李四</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X2</view>
+						<view class="jieshubiaotijian shengfudifen">-150</view>
 					</view>
 					<view class="fengexian" style="margin-top: 440rpx;" :style="{ backgroundImage: 'url(' + imageURLFGX + ')' }"></view>
 					<view class="shengliliebiao uni-flex uni-row" style="margin-top: 450rpx;">
 						<view class="dizhumao"></view>
-						<view class="jieshubiaoti1" style="margin-left: 40rpx;">王五</view>
-						<view class="jieshubiaoti1" style="margin-left: 130rpx;">50</view>
-						<view class="jieshubiaoti1" style="margin-left: 140rpx;">X3</view>
-						<view class="jieshubiaotijian" style="margin-left: 130rpx;">+150</view>
+						<view class="jieshubiaoti1 shengfumingcheng">王五</view>
+						<view class="jieshubiaoti1 shengfudifen">50</view>
+						<view class="jieshubiaoti1 shengfubeishu">X3</view>
+						<view class="jieshubiaotijian shengfudifen">-150</view>
 					</view>
 					<view class="zailaiyiju" @tap="zailaiyiju" :style="{ backgroundImage: 'url(' + imageURLZLYJ + ')' }"></view>
 				</view>
@@ -296,10 +279,12 @@
 export default {
 	data() {
 		return {
+			/* 玩家出的卡牌 */
+			chukapai:false,
 			/* 音乐禁用按钮 */
-			yinyueJY:false,
+			yinyueJY: false,
 			/* 音效禁用按钮 */
-			yinxiaoJY:false,
+			yinxiaoJY: false,
 			/* 抢地主 字 */
 			showqiangdizhu: false,
 			/* 不抢 字 */
@@ -321,9 +306,9 @@ export default {
 			/* 出牌的要不起按钮和钟表 */
 			showyaobuqianniu1: true,
 			/* 出牌的提示按钮 */
-			showtishianniu:true,
+			showtishianniu: true,
 			/* 出牌的出牌按钮 */
-			showchupaianniu:true,
+			showchupaianniu: true,
 			/* 抢 钟表 不抢按钮 */
 			showqianganniu: true,
 			/* 钟表 */
@@ -350,129 +335,173 @@ export default {
 			daojishi: '30',
 			/* 倒计时用 */
 			timet: null,
-			list:[
+			/* 玩家战绩数组 */
+			zhanji: [
 				{
-					ml:45,
-					pukepai:'/static/kapai/poker_79.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '胜',
+					yangshi: 'zhanjisheng',
+					fenshu: '+500'
 				},
 				{
-					ml:90,
-					pukepai:'/static/kapai/poker_78.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '负',
+					yangshi: 'zhanjifu',
+					fenshu: '-500'
 				},
 				{
-					ml:135,
-					pukepai:'/static/kapai/poker_2.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '胜',
+					yangshi: 'zhanjisheng',
+					fenshu: '+500'
 				},
 				{
-					ml:180,
-					pukepai:'/static/kapai/poker_18.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '负',
+					yangshi: 'zhanjifu',
+					fenshu: '-500'
 				},
 				{
-					ml:225,
-					pukepai:'/static/kapai/poker_34.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '胜',
+					yangshi: 'zhanjisheng',
+					fenshu: '+500'
 				},
 				{
-					ml:270,
-					pukepai:'/static/kapai/poker_50.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '负',
+					yangshi: 'zhanjifu',
+					fenshu: '-500'
 				},
 				{
-					ml:315,
-					pukepai:'/static/kapai/poker_1.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '负',
+					yangshi: 'zhanjifu',
+					fenshu: '-500'
 				},
 				{
-					ml:360,
-					pukepai:'/static/kapai/poker_17.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '胜',
+					yangshi: 'zhanjisheng',
+					fenshu: '+500'
 				},
 				{
-					ml:405,
-					pukepai:'/static/kapai/poker_33.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '负',
+					yangshi: 'zhanjifu',
+					fenshu: '-500'
 				},
 				{
-					ml:450,
-					pukepai:'/static/kapai/poker_49.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:495,
-					pukepai:'/static/kapai/poker_13.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:540,
-					pukepai:'/static/kapai/poker_29.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:585,
-					pukepai:'/static/kapai/poker_45.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:630,
-					pukepai:'/static/kapai/poker_61.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:675,
-					pukepai:'/static/kapai/poker_12.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:720,
-					pukepai:'/static/kapai/poker_28.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:765,
-					pukepai:'/static/kapai/poker_44.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:810,
-					pukepai:'/static/kapai/poker_60.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:855,
-					pukepai:'/static/kapai/poker_11.png',
-					show1:true,
-					show2:false
-				},
-				{
-					ml:900,
-					pukepai:'/static/kapai/poker_27.png',
-					show1:true,
-					show2:false
+					shijian: '2019-10-04',
+					shengfu: '胜',
+					yangshi: 'zhanjisheng',
+					fenshu: '+500'
 				}
-
 			],
+			/* 玩家卡牌数组 */
+			list: [
+				{
+					pukepai: '/static/kapai/poker_79.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_78.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_2.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_18.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_34.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_50.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_1.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_17.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_33.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_49.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_13.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_29.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_45.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_61.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_12.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_28.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_44.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_60.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_11.png',
+					show1: true,
+					show2: false
+				},
+				{
+					pukepai: '/static/kapai/poker_27.png',
+					show1: true,
+					show2: false
+				}
+			],
+			listchupai: [],
 			/* ==========================================大背景==================================================== */
 			/* 大背景 */
 			imageURL: '/static/hengpingyouxi/img_bj_yx.png',
@@ -506,9 +535,9 @@ export default {
 			/* 设置-背景 */
 			imageURLSZBJ: '/static/youxishezhi/img_sz_sz.png',
 			/* 音乐-按钮 */
-			imageURLYY:'/static/youxishezhi/icon_yy_sz.png',
+			imageURLYY: '/static/youxishezhi/icon_yy_sz.png',
 			/* 音效-按钮 */
-			imageURLYX:'/static/youxishezhi/icon_yx.png',
+			imageURLYX: '/static/youxishezhi/icon_yx.png',
 			/* ========================================插图======================================================= */
 			/* 地主帽儿 */
 			imageURLDZ: '/static/hengpingyouxi/icon_dz_yx.png',
@@ -560,7 +589,7 @@ export default {
 			imageURLZJHDT: '/static/hengpingyouxi/img_jd_lszj.png',
 			/* =========================================扑克牌====================================================== */
 			/* 扑克牌背面 */
-			imageURLKPBJ: '/static/hengpingyouxi/icon_bm_yx.png',
+			imageURLKPBJ: '/static/hengpingyouxi/icon_bm_yx.png'
 		};
 	},
 	/* 钟表倒计时 */
@@ -570,35 +599,35 @@ export default {
 			this.daojishi--;
 			if (this.daojishi <= 0) {
 				this.shijiandao();
+				this.tapyaobuqi1();
 				return;
 			}
 			this.shuzi();
 		}, 1000);
 	},
 	methods: {
-
 		/* 倒计时时间到 */
-		shijiandao(){
-			clearInterval(this.timer)
+		shijiandao() {
+			clearInterval(this.timer);
 		},
 		/* 处理数字 */
-		shuzi(){
-			let s = this.daojishi
-			if (s<10) {
-				s='0'+s;
+		shuzi() {
+			let s = this.daojishi;
+			if (s < 10) {
+				s = '0' + s;
 			}
-			this.daojishi=s;
+			this.daojishi = s;
 		},
 		/* 设置按钮 */
 		tanchucengSZBT() {
 			this.tanchucengSZ = true;
 		},
 		/* 音乐禁用按钮 */
-		jinyongYY(){
+		jinyongYY() {
 			this.yinyueJY = !this.yinyueJY;
 		},
 		/* 音乐禁用按钮 */
-		jinyongYX(){
+		jinyongYX() {
 			this.yinxiaoJY = !this.yinxiaoJY;
 		},
 		/* 关闭弹出层红叉号 */
@@ -636,7 +665,7 @@ export default {
 			this.showbujiaozi = true;
 			this.showjiaofenanniu = false;
 		},
-		/* 不叫按钮 */
+		/* 叫分按钮 */
 		tapjiaofen() {
 			this.showjiaofenzi = true;
 			this.showjiaofenanniu = false;
@@ -647,11 +676,17 @@ export default {
 			this.showyaobuqizi = true;
 		},
 		/* 出牌的要不起按钮 */
-		tapyaobuqi1(){
+		tapyaobuqi1() {
 			this.showyaobuqianniu1 = false;
 			this.showtishianniu = false;
 			this.showchupaianniu = false;
 			this.showyaobuqizi = true;
+			for (let i = 0; i < this.list.length; i++) {
+				if (this.list[i].show2) {
+					this.list[i].show1 = true;
+					this.list[i].show2 = false;
+				}
+			}
 		},
 		/* 抢地主按钮 */
 		tapqiangdizhu() {
@@ -665,12 +700,35 @@ export default {
 		},
 		/* 卡牌点击事件 */
 		tapdikapai(index) {
-			this.list[index].show1= !this.list[index].show1;
-			this.list[index].show2= !this.list[index].show2;
+			/* 	this.list[index].show1 = !this.list[index].show1; */
+			this.list[index].show2 = !this.list[index].show2;
 		},
-		tapgaokapai20() {
-			this.showdikapai20 = !this.showdikapai20;
-			this.showgaokapai20 = !this.showgaokapai20;
+		/* 出牌按钮 */
+		tapchupai() {
+			for (let i = 0; i < this.list.length; i++) {
+				if (this.list[i].show2) {
+					this.listchupai.push(this.list[i]);
+				}
+			}
+			this.chukapai = true;
+			for (let j = 0; j < this.list.length; j++) {
+				for (let i = 0; i < this.list.length; i++) {
+					if (this.list[i].show2) {
+						this.list.splice(i, 1);
+					}
+					if (this.list[i].show2) {
+						this.list.splice(i, 1);
+					}
+				}
+			}
+			if (this.list.length === 0) {
+				this.tanchucengS = true;
+			}else{
+				this.showyaobuqianniu1 = false;
+				this.showtishianniu= false;
+				this.showchupaianniu= false;
+			}
+			clearInterval(this.timer);
 		},
 		/* 退出游戏跳转 */
 		tuichuyouxi() {
@@ -737,6 +795,14 @@ export default {
 	border-radius: 150rpx;
 	border: 4rpx solid #af9788;
 }
+/* 玩家昵称 */
+.nicheng {
+	position: absolute;
+	color: #ffffff;
+	font-size: 30rpx;
+	margin-left: 20rpx;
+	margin-top: 20rpx;
+}
 /* 头部金币 */
 .toubujifen {
 	margin-left: 460rpx;
@@ -747,6 +813,11 @@ export default {
 	border: 4rpx solid #af9788;
 	position: absolute;
 	background: rgba(0, 0, 0, 0.3);
+}
+/* 金币的图标 */
+.jifenbiaozhi {
+	width: 50rpx;
+	height: 50rpx;
 }
 /* 金币字 */
 .jifen {
@@ -795,6 +866,8 @@ export default {
 	/* border: 4rpx solid #af9788; */
 	background: rgba(0, 0, 0, 0.3);
 	margin-left: 40rpx;
+	position: absolute;
+	margin-left: 725rpx;
 }
 /* 电脑头像图 */
 .AItouxiangtu {
@@ -838,8 +911,9 @@ export default {
 	height: 105rpx;
 	width: 75rpx;
 	align-items: center;
-	margin-left: 35rpx;
 	margin-top: 40rpx;
+	position: absolute;
+	margin-left: 600rpx;
 	/*	margin-top: 40rpx; */
 }
 /* 卡牌数量字 */
@@ -890,6 +964,8 @@ export default {
 }
 .jiaofen1 {
 	margin-left: 80rpx;
+	position: absolute;
+	margin-left: 400rpx;
 }
 /* 电脑下面的倍数 */
 .fenshu1 {
@@ -967,6 +1043,16 @@ export default {
 /* 卡牌栏 */
 .kapailan {
 	z-index: 995;
+	-webkit-justify-content: center;
+	justify-content: center;
+}
+.kapailan1 {
+	position: absolute;
+	z-index: 995;
+	-webkit-justify-content: center;
+	justify-content: center;
+	margin-left: 480rpx;
+	margin-top: -70rpx;
 }
 /* 卡牌 */
 .kapai {
@@ -976,14 +1062,11 @@ export default {
 	position: absolute;
 	background-size: 100% 100%;
 }
-.kapai1 {
-	/* z-index: 995; */
-	width: 130rpx;
-	height: 185rpx;
-	position: absolute;
-	background-size: 100% 100%;
+
+.kapai2 {
+	margin-top: -20rpx;
 }
-.kapai11{
+.kapai11 {
 	position: absolute;
 }
 /* AI出的牌 */
@@ -1010,6 +1093,12 @@ export default {
 	left: 20%;
 	top: 15%;
 	z-index: 998;
+}
+/* 胜负弹出框背景 */
+.shengfubeijing {
+	background: rgba(21, 19, 19, 0.82);
+	width: 1334rpx;
+	height: 750rpx;
 }
 /* 胜负的弹出框 */
 .tanchukuangshengfu {
@@ -1074,6 +1163,19 @@ export default {
 .wenben {
 	color: #8c6348;
 }
+.duizhanshijian {
+	margin-left: 40rpx;
+}
+.zhankuang {
+	margin-left: 165rpx;
+}
+.duizhanjinbi {
+	margin-left: 190rpx;
+}
+/* 战绩滑动条高度 */
+.zhanjibiao {
+	height: 280rpx;
+}
 /* 战绩的加减金币 */
 .jinbi {
 	margin-left: 200rpx;
@@ -1126,6 +1228,25 @@ export default {
 .jieshubiaoti {
 	color: #dbdbdb;
 }
+.shengfubiaotinicheng {
+	margin-left: 40rpx;
+}
+.shengfubiaotidifen {
+	margin-left: 120rpx;
+}
+.shengfubiaotibeishu {
+	margin-left: 115rpx;
+}
+
+.shengfumingcheng {
+	margin-left: 40rpx;
+}
+.shengfudifen {
+	margin-left: 130rpx;
+}
+.shengfubeishu {
+	margin-left: 140rpx;
+}
 /*  */
 .jieshubiaoti1 {
 	color: #f7cf09;
@@ -1145,12 +1266,12 @@ export default {
 	margin-left: 30rpx;
 }
 /* 设置音效的字体 */
-.shezhiziti{
+.shezhiziti {
 	font-size: 35rpx;
-	color: #1C1C1C;
+	color: #1c1c1c;
 }
 /* 音乐音效按钮 */
-.yinyuetubiao{
+.yinyuetubiao {
 	background-size: 100% 100%;
 	height: 65rpx;
 	width: 60rpx;
@@ -1189,7 +1310,7 @@ export default {
 	margin-top: -70rpx;
 }
 /* 出牌的要不起按钮 */
-.yaobuqianniu2{
+.yaobuqianniu2 {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;
@@ -1197,7 +1318,7 @@ export default {
 	margin-left: 115rpx;
 }
 /* 出牌 */
-.chupaianniu{
+.chupaianniu {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;
@@ -1205,7 +1326,7 @@ export default {
 	margin-left: 65rpx;
 }
 /* 提示 */
-.tishianniu{
+.tishianniu {
 	margin-top: 15rpx;
 	width: 140rpx;
 	height: 60rpx;

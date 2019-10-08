@@ -1,11 +1,30 @@
 
+.chahao {
+		width: 30rpx;
+		height: 30rpx;
+		margin-top: 20rpx;
+		position: absolute;
+}
+.suokuang {
+		width: 95rpx;
+}
+.suo {
+		width: 40rpx;
+		height: 40rpx;
+		margin-top: 20rpx;
+		margin-left: 30rpx;
+}
+.mimakuang {
+		margin-top: 20rpx;
+}
 .srk{
+		width: 400rpx;
 		margin-top: 12rpx;
 		color: #1C1C1C;
 }
 .content {
 		width: 750rpx;
-		height: 1334rpx;
+		height: 1197rpx;
 		background-color: #e5e5e5;
 }
 .ceng2 {
@@ -21,13 +40,10 @@
 }
 .inp {
 	background-color: #FFFFFF;
-	color: #e5e5e5;
-	font-size: 26rpx;
 }
 .bt{
 	height: 40rpx;
 	margin-top: 20rpx;
-	margin-left: -125rpx;
 	position: absolute;
 	color: #896744;
 	font-size: 25rpx; 

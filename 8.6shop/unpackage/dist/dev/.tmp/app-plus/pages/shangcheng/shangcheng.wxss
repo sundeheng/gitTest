@@ -2,43 +2,49 @@
 .scroll-Y {
 	/* height: 1334rpx; */
 }
-.ceng6{
+.ceng6 {
 	margin-left: 17rpx;
 }
-.ceng4{
+.ceng4 {
 	margin-top: 20rpx;
 	/* margin-left: 17rpx; */
 	height: 300rpx;
 	width: 220rpx;
-	border: 5rpx solid #F7F7F7;
+	border: 5rpx solid #f7f7f7;
 	border-radius: 10rpx;
 }
 .scroll-view-item {
 	height: 1334rpx;
 }
-.xiaotu{
+.xiaotu {
 	height: 165rpx;
 	width: 220rpx;
 	background-size: 100% 100%;
 }
-.bt{
+.bt {
 	border-radius: 10rpx;
 	padding-left: 20rpx;
 	padding-right: 20rpx;
 	font-size: 20rpx;
 	line-height: 32rpx;
-	color: #FFFFFF;
+	color: #ffffff;
 	background-color: #896744;
 }
-.zi2{
+.zi2 {
 	font-size: 25rpx;
 	color: #000000;
 	margin-top: 10rpx;
-	text-align: center;/* 居中 */
+	text-align: center; /* 居中 */
 }
-.zi3{
+.zi3 {
 	font-size: 20rpx;
 	color: #896744;
-	text-align: center;/* 居中 */
+	text-align: center; /* 居中 */
+}
+.duihuan {
+	-webkit-justify-content: center;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
 }
 

@@ -1,6 +1,6 @@
 <template>
 	<!-- 最外层背景 -->
-	<view class="content" :style="{ backgroundImage: 'url(' + imageURL + ')' }" >
+	<view class="content" :style="{ backgroundImage: 'url(' + imageURL + ')' }">
 		<page-head :title="title"></page-head>
 		<!-- 上面中间的头像logo -->
 		<image src="../../static/logo.png" mode="aspectFit" class="logo"></image>
@@ -10,43 +10,55 @@
 			<view class="ceng2 uni-flex uni-row ">
 				<!-- +86字段 -->
 				<picker @change="bindPickerChange" :value="index" :range="array" range-key="name">
-					<view class="shuzi"><text class="shuzi1">{{array[index].name}}</text></view>
+					<view class="shuzi">
+						<text class="shuzi1">{{ array[index].name }}</text>
+					</view>
 				</picker>
 				<!-- 向下箭头 -->
-				<view class=""><image style="width: 25rpx;height: 25rpx; margin-top: 25rpx;" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
+				<view><image class="xiajiantou" src="../../static/shiliangtu/XiaJianTou.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input name = "shoujihao" @input="shoujihaoChange" class="srk" type="number" placeholder-class="text2" placeholder="请输入手机号" style="background-color:#515151 ;" /></view>
+				<view class="inp">
+					<input
+						name="shoujihao"
+						@input="shoujihaoChange"
+						class="srk"
+						type="number"
+						placeholder-class="text2"
+						placeholder="请输入手机号"
+						style="background-color:#515151 ;"
+					/>
+				</view>
 			</view>
 			<!-- 横向的密码输入框div -->
-			<view class="ceng2 uni-flex uni-row " style="margin-top: 20rpx;">
+			<view class="ceng2 uni-flex uni-row  mimakuang">
 				<!-- 锁的标志 -->
-				<view style="width: 115rpx;">
-					<image style="width: 40rpx;height: 40rpx; margin-top: 20rpx;margin-left: 30rpx;" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image>
-				</view>
+				<view class="suokuang"><image class="suo" src="../../static/denglu/icon_password_3login.png" mode="aspectFit"></image></view>
 				<!-- 竖杠 -->
-				<view class="text">丨</view>
+				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input name = "mima" @input="mimaChange" class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" /></view>
+				<view class="inp">
+					<input name="mima" @input="mimaChange" class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" />
+				</view>
 			</view>
 			<!-- 忘记密码短信验证 横向排列的div -->
 			<view class="uni-flex uni-row">
 				<!-- 信息图标 -->
-				<image src="../../static/denglu/icon_dx_dl.png" mode="aspectFit" style="width: 35rpx;height: 35rpx; margin-top: 7rpx;"></image>
-				<view class="text1" @tap="navigateTo" style="margin-left: 10rpx;">短信验证</view>
-				<view class="text1" @tap="navigateTo1"  style="margin-left: 305rpx;">忘记密码?</view>
+				<image class="xinxi" src="../../static/denglu/icon_dx_dl.png" mode="aspectFit"></image>
+				<view class="text1 duanxin" @tap="navigateTo">短信验证</view>
+				<view class="text1 wangji" @tap="navigateTo1">忘记密码?</view>
 			</view>
 			<!-- 记住密码横向div -->
 			<view class="uni-flex uni-row" style="align-items: center;">
 				<!-- 对号图标 -->
-				<radio value="r2" :checked="checked" color="#26904d" style="transform:scale(0.7);margin-top: 10rpx;" @tap="jizhumima"/>
-				<view class="text1" style="margin-top: 10rpx;" @tap="jizhumima">记住密码</view>
+				<radio value="r2" class="r2" :checked="checked" color="#26904d" @tap="jizhumima" />
+				<view class="text1 jizhu" @tap="jizhumima">记住密码</view>
 			</view>
 			<!-- 登录按钮 -->
-			<button type="primary" class="bt" @tap="navigateTo2" style="background-color: #8a5421;margin-top: 15rpx;">登录</button>
+			<button type="primary" class="bt denglu" style="background-color: #8a5421;" @tap="navigateTo2">登录</button>
 			<!-- 注册按钮 -->
-			<button type="primary" class="bt" @tap="navigateTo3" style="background-color: #6a6a6a;position: absolute;left: 0;bottom: 0;width: 574rpx;">注册</button>
+			<button type="primary" class="bt zhuce" style="	background-color: #6a6a6a;" @tap="navigateTo3">注册</button>
 		</view>
 	</view>
 </template>
@@ -57,80 +69,80 @@ export default {
 		return {
 			/* name:'', */
 			/* 手机号输入框的内容 */
-			shoujihao:'',
+			shoujihao: '',
 			/* 密码输入框的内容 */
-			mima:'',
+			mima: '',
 			title: 'toast',
 			checked: true,
 			/* 返回的最外层背景图片路径 */
 			imageURL: '/static/denglu/bg_dl.png',
 			/* title: 'picker', */
-			array: [{name:'+86'},{name: '+87'}, {name:'+88'}, {name:'+89'}],
+			array: [{ name: '+86' }, { name: '+87' }, { name: '+88' }, { name: '+89' }],
 			index: 0
 		};
 	},
 	methods: {
-		jizhumima(){
-			this.checked = !this.checked
+		jizhumima() {
+			this.checked = !this.checked;
 		},
 		/* 手机号输入框返回的值 */
-		shoujihaoChange:function (e) {
+		shoujihaoChange: function(e) {
 			this.shoujihao = e.detail.value;
 			getApp().globalData.shoujihao = this.shoujihao;
 		},
 		/* 密码输入框返回的值 */
-		mimaChange:function (e) {
+		mimaChange: function(e) {
 			this.mima = e.detail.value;
 		},
 		bindPickerChange: function(e) {
-			console.log('picker发送选择改变，携带值为：' + e.target.value)
-			this.index = e.target.value
+			console.log('picker发送选择改变，携带值为：' + e.target.value);
+			this.index = e.target.value;
 		},
 		navigateTo() {
 			uni.navigateTo({
-				url:'../duanxindenglu/duanxindenglu'
-			})
+				url: '../duanxindenglu/duanxindenglu'
+			});
 		},
 		navigateTo1() {
 			uni.navigateTo({
-				url:'../zhaohuimima/zhaohuimima'
-			})
+				url: '../zhaohuimima/zhaohuimima'
+			});
 		},
 		navigateTo2() {
-				if (this.shoujihao === '') {
-					uni.showToast({
-						title: "请输入手机号!",
-						icon: 'none',
-					})
-				}else if(this.mima === ''){
-					uni.showToast({
-						title: "请输入密码!",
-						icon: 'none',
-					})
-				}else if(this.shoujihao.length !=11){
-					uni.showToast({
-						title: "手机号必须为11位!",
-						icon: 'none',
-					})
-				}else if(this.mima.length<8){
-					uni.showToast({
-						title: "密码必须大于8位!!",
-						icon: 'none',
-					})
-				}else{
-					uni.reLaunch({
-						url:'../shouye/shouye'
-					})
-				}
+/* 			if (this.shoujihao === '') {
+				uni.showToast({
+					title: '请输入手机号!',
+					icon: 'none'
+				});
+			} else if (this.mima === '') {
+				uni.showToast({
+					title: '请输入密码!',
+					icon: 'none'
+				});
+			} else if (this.shoujihao.length != 11) {
+				uni.showToast({
+					title: '手机号必须为11位!',
+					icon: 'none'
+				});
+			} else if (this.mima.length < 8) {
+				uni.showToast({
+					title: '密码必须大于8位!!',
+					icon: 'none'
+				});
+			} else { */
+				uni.reLaunch({
+					url: '../shouye/shouye'
+				});
+			/* } */
 		},
 		navigateTo3() {
 			uni.navigateTo({
-				url:'../zhuce/zhuce'
-			})
+				url: '../zhuce/zhuce'
+			});
 		}
 	},
 	onShow() {
-		plus.screen.lockOrientation("portrait-primary");
+		plus.screen.lockOrientation('portrait-primary');
 	}
 };
 </script>
@@ -161,15 +173,57 @@ export default {
 	background-color: #515151;
 	border-radius: 10rpx;
 }
+.suokuang {
+	width: 100rpx;
+}
+.suo {
+	width: 40rpx;
+	height: 40rpx;
+	margin-top: 20rpx;
+	margin-left: 30rpx;
+}
+.mimakuang {
+	margin-top: 20rpx;
+}
+.xiajiantou {
+	width: 25rpx;
+	height: 25rpx;
+	margin-top: 25rpx;
+}
 .text {
 	margin: 15rpx 10rpx;
 	text-align: center;
 	color: #ffffff;
 	font-size: 26rpx;
 }
+.text0 {
+	margin: 15rpx 10rpx;
+	text-align: center;
+	color: #ffffff;
+	font-size: 26rpx;
+	padding-left: 15rpx;
+}
 .text1 {
 	color: #ffffff;
 	font-size: 26rpx;
+}
+.jizhu {
+	margin-top: 10rpx;
+}
+.r2 {
+	transform: scale(0.7);
+	margin-top: 10rpx;
+}
+.duanxin {
+	margin-left: 10rpx;
+}
+.wangji {
+	margin-left: 305rpx;
+}
+.xinxi {
+	width: 35rpx;
+	height: 35rpx;
+	margin-top: 7rpx;
 }
 .inp {
 	color: #ffffff;
@@ -180,17 +234,27 @@ export default {
 	height: 80rpx;
 	font-size: 32rpx;
 }
-.shuzi{
+.zhuce {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 574rpx;
+}
+.denglu {
+	
+	margin-top: 15rpx;
+}
+.shuzi {
 	width: 70rpx;
 	align-items: center;
 	text-align: right;
-/* 	padding-left: 20rpx;
+	/* 	padding-left: 20rpx;
 	padding-top: 20rpx; */
 	background-color: #515151;
 	border-radius: 10rpx;
 }
-.shuzi1{
-	color: #FFFFFF;
-	font-size:25rpx;
+.shuzi1 {
+	color: #ffffff;
+	font-size: 25rpx;
 }
 </style>

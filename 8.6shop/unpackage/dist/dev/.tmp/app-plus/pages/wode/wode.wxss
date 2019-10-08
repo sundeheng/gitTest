@@ -1,4 +1,7 @@
 
+.dimian{
+		background-color: #F7F7F7; height: 1220rpx;
+}
 .bg {
 	height: 415rpx;
 	background-size: 100% 100%;
@@ -160,6 +163,7 @@
 		margin-top: 30rpx;
 }
 .qiandao7{
+		-webkit-justify-content: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;
 		height: 175rpx;
 		-webkit-box-align: center;
 		-webkit-align-items: center;
@@ -214,11 +218,17 @@
 		color: #d1d5d1;
 		font-size: 20rpx;
 }
+.lijiqiandaoanniu{
+		-webkit-justify-content: center;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center; margin-top: 225rpx;
+}
 .dui{
 		position: absolute;
 		width: 30rpx;
 		height: 30rpx;
 		margin-top: 5rpx;
+}
+.tanchukuangchahao{
+		-webkit-justify-content: flex-end;-webkit-box-pack: end;-ms-flex-pack: end;justify-content: flex-end;
 }
 .cha{
 		width: 40rpx;
