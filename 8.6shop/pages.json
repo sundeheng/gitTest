@@ -97,17 +97,6 @@
 				"navigationBarTitleText": "选择收货地址",
 				"navigationBarTextStyle": "white",
 				"navigationBarBackgroundColor": "#896744",
-				/* 						"app-plus": {
-										    "titleNView": {
-										        "buttons": [{
-										                "type": "share"
-										            },
-										            {
-										                "type": "favorite"
-										            }
-										        ]
-										    }
-										} */
 				"app-plus": {
 					"titleNView": {
 						"buttons": [{

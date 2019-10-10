@@ -18,7 +18,7 @@
 				<!-- 竖杠 -->
 				<view class="text">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" type="number" placeholder="请输入手机号登录"  /></view>
+				<view class="inp"><input v-model="account" type="number" placeholder="请输入手机号登录"  /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row mimakuang" >
@@ -36,7 +36,7 @@
 				<!-- 竖杠 -->
 				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" password type="text" placeholder="请输入密码"  /></view>
+				<view class="inp"><input v-model="password" class="srk" password type="text" placeholder="请输入密码"  /></view>
 			</view>
 			<!-- 横向的密码输入框div -->
 			<view class="ceng2 uni-flex uni-row mimakuang" >
@@ -45,18 +45,23 @@
 				<!-- 竖杠 -->
 				<view class="text0">丨</view>
 				<!-- 输入框 -->
-				<view class="inp"><input class="srk" password type="text" placeholder="请再次输入密码" /></view>
+				<view class="inp"><input class="srk" v-model="password1" password type="text" placeholder="请再次输入密码" /></view>
 			</view>
 			<!-- 登录按钮 -->
-			<button type="primary" class="bt1" style="background-color: #8a5421;">注册</button>
+			<button type="primary" class="bt1" @tap="register" style="background-color: #8a5421;">注册</button>
 		</view>
 	</view>
 </template>
 
 <script>
+	import service from '../../service.js';
 export default {
+	
 	data() {
 		return {
+			account: '',
+			password: '',
+			password1: '',
 			imageURL: '/static/denglu/bg_dl.png',
 			title: 'picker',
 			array: [{ name: '+86' }, { name: '+87' }, { name: '+88' }, { name: '+89' }],
@@ -67,6 +72,44 @@ export default {
 		bindPickerChange: function(e) {
 			console.log('picker发送选择改变，携带值为：' + e.target.value);
 			this.index = e.target.value;
+		},
+		register() {
+		    /**
+		     * 客户端对账号信息进行一些必要的校验。
+		     * 实际开发中，根据业务需要进行处理，这里仅做示例。
+		     */
+		    if (this.account.length < 5) {
+		        uni.showToast({
+		            icon: 'none',
+		            title: '账号最短为 5 个字符'
+		        });
+		        return;
+		    }
+		    if (this.password.length < 6) {
+		        uni.showToast({
+		            icon: 'none',
+		            title: '密码最短为 6 个字符'
+		        });
+		        return;
+		    }
+			if(this.password != this.password1 ){
+				uni.showToast({
+				    icon: 'none',
+				    title: '两次密码输入不一致'
+				});
+				return;
+			}
+		    const data = {
+		        account: this.account,
+		        password: this.password,
+		    }
+		    service.addUser(data);
+		    uni.showToast({
+		        title: '注册成功'
+		    });
+		    uni.navigateBack({
+		        delta: 1
+		    });
 		}
 	}
 };

@@ -21,13 +21,12 @@
 				<!-- 输入框 -->
 				<view class="inp">
 					<input
-						name="shoujihao"
+						v-model="account"
 						@input="shoujihaoChange"
 						class="srk"
 						type="number"
 						placeholder-class="text2"
 						placeholder="请输入手机号"
-						style="background-color:#515151 ;"
 					/>
 				</view>
 			</view>
@@ -39,7 +38,14 @@
 				<view class="text0">丨</view>
 				<!-- 输入框 -->
 				<view class="inp">
-					<input name="mima" @input="mimaChange" class="srk" password="true" placeholder-class="text2" placeholder="请输入密码" style="background-color:#515151 ;" />
+					<input
+						v-model="password"
+						@input="mimaChange"
+						class="srk"
+						password="true"
+						placeholder-class="text2"
+						placeholder="请输入密码"
+					/>
 				</view>
 			</view>
 			<!-- 忘记密码短信验证 横向排列的div -->
@@ -64,14 +70,15 @@
 </template>
 
 <script>
+	import service from '../../service.js';
 export default {
 	data() {
 		return {
 			/* name:'', */
 			/* 手机号输入框的内容 */
-			shoujihao: '',
 			/* 密码输入框的内容 */
-			mima: '',
+			account: '',
+			password: '',
 			title: 'toast',
 			checked: true,
 			/* 返回的最外层背景图片路径 */
@@ -87,8 +94,8 @@ export default {
 		},
 		/* 手机号输入框返回的值 */
 		shoujihaoChange: function(e) {
-			this.shoujihao = e.detail.value;
-			getApp().globalData.shoujihao = this.shoujihao;
+			this.account = e.detail.value;
+			getApp().globalData.shoujihao = this.account;
 		},
 		/* 密码输入框返回的值 */
 		mimaChange: function(e) {
@@ -109,31 +116,66 @@ export default {
 			});
 		},
 		navigateTo2() {
-/* 			if (this.shoujihao === '') {
-				uni.showToast({
-					title: '请输入手机号!',
-					icon: 'none'
+			/* 记住密码的 */
+			if (this.checked) {
+				uni.setStorage({
+					key: 'sjsj',
+					data: this.account
 				});
-			} else if (this.mima === '') {
-				uni.showToast({
-					title: '请输入密码!',
-					icon: 'none'
+				uni.setStorage({
+					key: 'mmmm',
+					data: this.password
 				});
-			} else if (this.shoujihao.length != 11) {
+			} else {
+				uni.setStorage({
+					key: 'sjsj',
+					data: ''
+				});
+				uni.setStorage({
+					key: 'mmmm',
+					data: ''
+				});
+			}
+			/**
+			 * 客户端对账号信息进行一些必要的校验。
+			 * 实际开发中，根据业务需要进行处理，这里仅做示例。
+			 */
+			if (this.account.length != 11) {
 				uni.showToast({
 					title: '手机号必须为11位!',
 					icon: 'none'
 				});
-			} else if (this.mima.length < 8) {
+				return;
+			} else if (this.password.length < 8) {
 				uni.showToast({
 					title: '密码必须大于8位!!',
 					icon: 'none'
 				});
-			} else { */
-				uni.reLaunch({
-					url: '../shouye/shouye'
-				});
-			/* } */
+				return;
+			}
+			/**
+			 * 下面简单模拟下服务端的处理
+			 * 检测用户账号密码是否在已注册的用户列表中
+			 * 实际开发中，使用 uni.request 将账号信息发送至服务端，客户端在回调函数中获取结果信息。
+			 */
+			 const data = {
+			     account: this.account,
+			     password: this.password
+			 };
+			 const validUser = service.getUsers().some(function (user) {
+			     return data.account === user.account && data.password === user.password;
+			 });
+			 if (validUser) {
+			     uni.reLaunch({
+			     	url: '../shouye/shouye'
+			     });
+			 } else {
+			     uni.showToast({
+			         icon: 'none',
+			         title: '用户账号或密码不正确',
+			     });
+				 return;
+			 }
 		},
 		navigateTo3() {
 			uni.navigateTo({
@@ -143,6 +185,12 @@ export default {
 	},
 	onShow() {
 		plus.screen.lockOrientation('portrait-primary');
+	},
+	onLoad() {
+		/* 记住密码回填 */
+		this.account = uni.getStorageSync('sjsj');
+		this.password = uni.getStorageSync('mmmm');
+
 	}
 };
 </script>
@@ -226,6 +274,7 @@ export default {
 	margin-top: 7rpx;
 }
 .inp {
+	background-color:#515151;
 	color: #ffffff;
 	font-size: 26rpx;
 }
@@ -241,7 +290,6 @@ export default {
 	width: 574rpx;
 }
 .denglu {
-	
 	margin-top: 15rpx;
 }
 .shuzi {

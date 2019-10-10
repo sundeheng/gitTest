@@ -16,7 +16,7 @@
 		<view class="hx2 uni-flex uni-row">
 			<image class="zuotu" src="../../static/wode/icon_jf_wd.png" mode="aspectFit"></image>
 			<text class="jf">我的积分</text>
-			<text class="jf2">10000</text>
+			<text class="jf2">{{wdjf}}</text>
 		</view>
 		<view class="hx2 uni-flex uni-row" style="margin-top: 20rpx;" @tap="tiao1()">
 			<image class="zuotu" src="../../static/wode/icon_dz_wd.png" mode="aspectFit"></image>
@@ -32,67 +32,34 @@
 				<view class="qiandao1"><image class="qiandao5" src="../../static/qiandao/bg_qd.png" mode="aspectFit"></image></view>
 				<view class="qiandao2">
 					<view class="qiandao6 uni-flex uni-row">
-						<view class="dui" style="margin-left: 125rpx;" v-show="dui1"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
-						<view class="dui" style="margin-left: 297rpx;" v-show="dui2"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
-						<view class="dui" style="margin-left: 460rpx;" v-show="dui3"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
-						<view class="dui" style="margin-left: 625rpx;" v-show="dui4"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
+						<view class="dui" v-for="(item,index) in list" :key='index' v-show="item.tu" :style="{marginLeft: 125+(170*index)+'rpx'}"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
 					</view>
 					<view class="qiandao7 uni-flex uni-row">
-						<view class="qiandaotu">
-							<view class="qiandaozi">第1天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaotu2" v-show="tu1"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" style="height: 70rpx; width: 75rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view>
-						<view class="hengxian1"></view>
-						<view class="hengxian" v-show="xian1"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第2天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view>
-						<view class="hengxian1"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第3天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view>
-						<view class="hengxian1"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第4天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
+						<view class="uni-flex uni-row qiandao8" v-for="(item,index) in list" :key='index'>
+							<view class="qiandaotu">
+								<view class="qiandaozi">第{{index+1}}天</view>
+								<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" class="qiandaotu3"></image></view>
+								<view class="qiandaotu2" v-show="item.tu"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" class="qiandaotu4"></image></view>
+								<view class="qiandaojifen">+100积分</view>
+							</view>
+							<view class="hengxian1" v-show="item.huixian"></view>
+							<view class="hengxian" v-show="item.huangxian"></view>
 						</view>
 					</view>
 					<view class="qiandao6 uni-flex uni-row">
-						<view class="dui" style="margin-left: 210rpx;" v-show="dui7"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
-						<view class="dui" style="margin-left: 375rpx;" v-show="dui6"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
-						<view class="dui" style="margin-left: 550rpx;" v-show="dui5"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></view>
+						<view class="dui" v-for="(item,index) in list1" :key='index' :style="{marginLeft: 210+(170*index)+'rpx'}" v-show="item.tu"><image src="../../static/qiandao/icon_yqd_qd.png" mode="aspectFit" class="dui"></image></view>
 					</view>
 					<view class="qiandao7 uni-flex uni-row">
-						<view class="qiandaotu">
-							<view class="qiandaozi">第7天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen" style="color: #ef9143;">+400积分</view>
+						<view class="uni-flex uni-row qiandao8" v-for="(item,index) in list1" :key='index'>
+							<view class="qiandaotu">
+								<view class="qiandaozi">第{{5+index}}天</view>
+								<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" class="qiandaotu3"></image></view>
+								<view class="qiandaotu2" v-show="item.tu"><image src="../../static/qiandao/icon_dzl_qd.png" mode="aspectFit" class="qiandaotu4"></image></view>
+								<view class="qiandaojifen">+{{item.jifen}}积分</view>
+							</view>
+							<view class="hengxian1" v-show="item.huixian"></view>
+							<view class="hengxian" v-show="item.huangxian"></view>
 						</view>
-						<view class="hengxian1"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第6天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view>
-						<view class="hengxian1"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第5天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view>
-						<!-- <view class="hengxian"></view>
-						<view class="qiandaotu">
-							<view class="qiandaozi">第1天</view>
-							<view class="qiandaotu1"><image src="../../static/qiandao/icon_dzh_qd.png" mode="aspectFit" style="height: 70rpx; width: 65rpx;"></image></view>
-							<view class="qiandaojifen">+100积分</view>
-						</view> -->
 					</view>
 				</view>
 				<view class="uni-flex uni-row lijiqiandaoanniu"><view class="qiandao3" @tap="lijiqiandao">立即签到</view></view>
@@ -109,21 +76,16 @@
 		},
 	data() {
 		return {
-			dui1:false,
-			dui2:false,
-			dui3:false,
-			dui4:false,
-			dui5:false,
-			dui6:false,
-			dui7:false,
-			tu1:false,
-			xian1:false,
 			nicheng:'',
 			shoujihao:'', 
 			show: false,
 			type: '',
+			num:0,
+			wdjf:11000,
 			imageURL: '/static/wode/icon_wqd_wo.png',
 			imageURLtx: '/static/wode/touxiang.jpg',
+			list:[{huixian:true,huangxian:false,tu:false},{huixian:true,huangxian:false,tu:false},{huixian:true,huangxian:false,tu:false},{huixian:false,huangxian:false,tu:false}],
+			list1:[{huixian:true,huangxian:false,tu:false,jifen:100},{huixian:true,huangxian:false,tu:false,jifen:100},{huixian:false,huangxian:false,tu:false,jifen:400}],
 		};
 	},
 	methods: {
@@ -142,13 +104,35 @@
 				}
 				this.$refs[type].close()
 			},
-			change(e) {
-				console.log(e.show)
-			},
+			/* 签到的 */
 			lijiqiandao(){
-				this.dui1=true;
-				this.tu1=true;
-				this.xian1=true;
+				if (this.num === 0) {
+					this.list[this.num].tu = true;
+					this.list[this.num].huangxian = true;
+					for (let i = 0; i < this.list1.length; i++) {
+						this.list[i+1].tu = false;
+						this.list[i+1].huangxian = false;
+						this.list1[i].tu = false;
+						this.list1[i].huangxian = false;
+					}
+					this.num++;
+				}else if((this.num<3)&&(this.num>0)){
+					this.list[this.num].tu = true;
+					this.list[this.num].huangxian = true;
+					this.num++;
+				}else if (this.num===3) {
+					this.list[this.num].tu = true;
+					this.list[this.num].huangxian = false;
+					this.num++;
+				}else if((this.num >=4)&&(6>this.num)){
+					this.list1[this.num-4].tu = true;
+					this.list1[this.num-4].huangxian = true;
+					this.num++;
+				}else if(this.num === 6){
+					this.list1[this.num-4].tu = true;
+					this.list1[this.num-4].huangxian = false;
+					this.num = 0;
+				}
 			},
 		tiao() {
 			uni.navigateTo({
@@ -283,7 +267,9 @@
 	color: #000000;
 }
 .jf2 {
-	margin-left: 420rpx;
+	width: 150rpx;
+	text-align: right;
+	margin-left: 340rpx;
 	font-size: 30rpx;
 	color: #e5b582;
 }
@@ -337,6 +323,11 @@
 		height: 175rpx;
 		align-items: center;
 	}
+	.qiandao8{
+		-webkit-justify-content: center;justify-content: center;
+		height: 175rpx;
+		align-items: center;
+	}
 	.qiandaotu{
 		width: 120rpx;
 		height: 185rpx;
@@ -370,6 +361,14 @@
 		align-items: center;
 		border-bottom-left-radius: 20rpx;
 		border-bottom-right-radius: 20rpx;
+	}
+	.qiandaotu3{
+		height: 70rpx;
+		width: 65rpx;
+	}
+	.qiandaotu4{
+		height: 70rpx; 
+		width: 75rpx;
 	}
 	.qiandaotu2{
 		position: absolute;

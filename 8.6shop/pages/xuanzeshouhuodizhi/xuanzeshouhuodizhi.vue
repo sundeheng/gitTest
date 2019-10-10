@@ -58,7 +58,7 @@ export default {
 				}
 			]
 		};
-	},
+	},//data()的结束括号
 	onNavigationBarButtonTap(e) {
 		uni.navigateTo({
 			url: '../tianjiashouhuodizhi/tianjiashouhuodizhi'

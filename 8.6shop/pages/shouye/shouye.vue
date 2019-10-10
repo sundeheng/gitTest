@@ -1,9 +1,7 @@
 <template>
 	<view>
 		<swiper class="" circular :indicator-dots="indicatorDots" :autoplay="autoplay" :interval="interval" :duration="duration">
-			<swiper-item><view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa1 + ')' }"></view></swiper-item>
-			<swiper-item><view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa2 + ')' }"></view></swiper-item>
-			<swiper-item><view class="guanggaowei" :style="{ backgroundImage: 'url(' + imageURLa3 + ')' }"></view></swiper-item>
+			<swiper-item v-for="(item, index) in list2" :key="index"><view class="guanggaowei" :style="{ backgroundImage: 'url(' + item.tupian + ')' }"></view></swiper-item>
 		</swiper>
 		<view class="uni-flex uni-row" style="margin-top: 15rpx;">
 			<view class="shu"></view>
@@ -121,6 +119,7 @@ export default {
 					jifen: '2000积分'
 				}
 			],
+			list2:[{tupian:'/static/shouye/ad-02.jpg'},{tupian:'/static/shouye/ad-04.jpg'},{tupian:'/static/shouye/ad-04.jpg'},{tupian:'/static/shouye/ad-03.jpg'}],
 			indicatorDots: true,
 			autoplay: true,
 			interval: 2000,
@@ -131,9 +130,6 @@ export default {
 			},
 			imageURL: '/static/shouye/dat.png',
 			imageURLBUY: '/static/shouye/icon_ljcj_sy.png',
-			imageURLa1: '/static/shouye/ad-02.jpg',
-			imageURLa2: '/static/shouye/ad-03.jpg',
-			imageURLa3: '/static/shouye/ad-04.jpg'
 		};
 	},
 	methods: {
